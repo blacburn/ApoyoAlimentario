@@ -16,17 +16,19 @@ class PersonaDAO {
     public function buscarPersonaxUsuario($usuario) {
         
         $persona = new Persona();
-        $sqltxt = "select * from s_persona where usuario = '".$usuario."'";
+        $sqltxt = "select * from s_persona where n_usuario = '".$usuario."'";
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
         oci_execute($stid);
         while(oci_fetch($stid)) {
-            //$persona->setCodigo_persona(oci_result($stid, 'CODIGO'));
-            $persona->setNombre_persona(oci_result($stid, 'NOMBRE_PER'));
-            $persona->setApellido_persona(oci_result($stid, 'APELLIDO_PER'));
-            $persona->setTipo_persona(oci_result($stid, 'TIPO'));
-            $persona->setUsuario_persona(oci_result($stid, 'USUARIO'));
-            $persona->setGenero_persona(oci_result($stid, 'GENERO'));            
-            $persona->setDocumento_persona(oci_result($stid, 'DOCUMENTO'));
+
+            $persona->setDocumento_persona(oci_result($stid, 'K_DOCUMENTO'));
+            $persona->setNombre_persona(oci_result($stid, 'N_NOMPER'));
+            $persona->setApellido_persona(oci_result($stid, 'N_APEPER'));
+            $persona->setUsuario_persona(oci_result($stid, 'N_USUARIO'));
+            $persona->setTipo_persona(oci_result($stid, 'T_TIPO'));
+            $persona->setGenero_persona(oci_result($stid, 'N_GENERO'));
+            $persona->setCorreo_persona(oci_result($stid, 'N_CORREO'));
+            
         }
         //echo $persona->getApellido_persona();
         return $persona;
@@ -35,7 +37,8 @@ class PersonaDAO {
  
     
     public function crearPersona($persona) {
-         $sqltxt="insert into s_persona values(".$persona->getCodigo_persona().",'".$persona->getNombre_persona()."','".$persona->getApellido_persona()."','".$persona->getTipo_persona()."','".$persona->getUsuario_persona()."','".$persona->getGenero_persona()."',".$persona->getDocumento_persona().")";
+        //$persona= new Persona();
+         $sqltxt="insert into s_persona values(".$persona->getDocumento_persona().",'".$persona->getNombre_persona()."','".$persona->getApellido_persona()."','".$persona->getUsuario_persona()."','".$persona->getTipo_persona()."','".$persona->getGenero_persona()."','".$persona->getCorreo_persona()."')";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
          

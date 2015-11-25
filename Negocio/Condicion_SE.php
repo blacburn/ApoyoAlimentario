@@ -8,7 +8,7 @@
 /**
  * Description of Condicion_SE
  *
- * @author ANDREY
+ * @author 
  */
 class Condicion_SE {
     //put your code here

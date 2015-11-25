@@ -12,19 +12,22 @@ class ControlPersona{
     
     private $persona;
     private $personaDAO;
+    
     public function __construct() {
         $this->personaDAO=new PersonaDAO();
     }
     
-    public function crearPersona($codigo_persona,$nombre_persona,$apellido_persona,$tipo_persona,$usuario,$genero,$documento){
+    public function crearPersona($documento_persona,$nombre_persona,$apellido_persona,$usuario,$tipo_persona,$genero,$correo_persona){
         $this->persona = new Persona();
         //$this->persona->setCodigo_persona($codigo_persona);
+        $this->persona->setDocumento_persona($documento_persona);
         $this->persona->setNombre_persona($nombre_persona);
         $this->persona->setApellido_persona($apellido_persona);
-        $this->persona->setTipo_persona($tipo_persona);
         $this->persona->setUsuario_persona($usuario);
+        $this->persona->setTipo_persona($tipo_persona);
         $this->persona->setGenero_persona($genero);
-        $this->persona->setDocumento_persona($documento);
+        $this->persona->setCorreo_persona($correo_persona);
+        
         $this->personaDAO->crearPersona($this->persona); 
     }
     

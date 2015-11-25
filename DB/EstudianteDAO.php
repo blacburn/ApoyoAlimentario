@@ -21,19 +21,19 @@ class EstudianteDAO {
     public function buscarEstudiantexDocumento($documento) {
         
         $estudiante = new Estudiante();
-        $sqltxt = "select * from s_estudiante where documento = ".$documento."";
+        $sqltxt = "select * from s_estudiante where k_documento = ".$documento."";
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
         //echo $sqltxt;
         oci_execute($stid);
         while(oci_fetch($stid)) {
             //$persona->setCodigo_persona(oci_result($stid, 'CODIGO'));
-            $estudiante->setCodigo_estudiante(oci_result($stid, 'CODIGO_EST'));
-            $estudiante->setDocumento_estudiante(oci_result($stid, 'DOCUMENTO'));
-            $estudiante->setMatriculas_estudiante(oci_result($stid, 'MATRICULAS_EST'));
-            $estudiante->setActivo_estudiante(oci_result($stid, 'ACTIVO'));
-            $estudiante->setCarrera_estudiante(oci_result($stid, 'CARRERA'));            
-            $estudiante->setPromedio_estudiante(oci_result($stid, 'PROMEDIO'));
-            $estudiante->setAval_solicitud(oci_result($stid, 'AVAL_SOLICITUD'));
+            $estudiante->setCodigo_estudiante(oci_result($stid, 'K_CODIGO_EST'));
+            $estudiante->setDocumento_estudiante(oci_result($stid, 'K_DOCUMENTO'));
+            $estudiante->setMatriculas_estudiante(oci_result($stid, 'C_MATRICULA'));
+            $estudiante->setActivo_estudiante(oci_result($stid, 'N_ACTIVO'));
+            $estudiante->setCarrera_estudiante(oci_result($stid, 'N_CARRERA'));            
+            $estudiante->setPromedio_estudiante(oci_result($stid, 'C_PROMEDIO'));
+            $estudiante->setAval_solicitud(oci_result($stid, 'B_AVALSOL'));
         }
         //echo (string)$estudiante->getCodigo_estudiante();
         //echo $estudiante->getCarrera_estudiante();
@@ -45,8 +45,8 @@ class EstudianteDAO {
     
     public function banderaActivo_solicitud($estudiante){
         //$estudiante = new Estudiante();
-        $sqltxt = "Update s_estudiante set aval_solicitud = '".$estudiante->getAval_solicitud()."' where "
-                . "codigo_est = ".$estudiante->getCodigo_estudiante()."";
+        $sqltxt = "Update s_estudiante set b_avalsol = '".$estudiante->getAval_solicitud()."' where "
+                . "k_codigo_est = ".$estudiante->getCodigo_estudiante()."";
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
         //echo $sqltxt;
         oci_execute($stid);

@@ -31,7 +31,7 @@ include './menuLateral.php';
 ?>      
         <div class="col-sm-8">
             
-            <center><h2>Bienvenido <?php
+            <center><h2><?php
                 $conn = new ConexionDB($_SESSION['usuario_login'], $_SESSION['password_login']);
                 if ($conn->conectarDB()) {
                     $sesion = $conn->getConn();
@@ -40,7 +40,7 @@ include './menuLateral.php';
                     $cPersona = new ControlPersona();
                     $persona = new Persona();
                     $persona = $cPersona->buscarPersonaxUsuario($_SESSION['usuario_login']);
-                    echo $persona->getNombre_persona()." ".$persona->getApellido_persona(); //->getNombre_persona()." ".$persona->getTipo_persona();
+                    echo "Bienvenido  ".$persona->getNombre_persona()." ".$persona->getApellido_persona(); //->getNombre_persona()." ".$persona->getTipo_persona();
                     //echo $_SESSION['usuario_logueado'];
                 }
                 ?>

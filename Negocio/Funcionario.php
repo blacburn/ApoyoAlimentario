@@ -7,51 +7,39 @@
  */
 
 class Funcionario{
-    private $nombre_funcionario;
-    private $apellido_funcionario;
-    private $codigo;
-    private $usuario_funcionario;
+    private $id_funcionario;
+    private $documento_funcionario;
+    private $cargo_funcionario;
     
     public function __construct() {
         
-    }
-
-    
-    public function getNombre_funcionario() {
-        return $this->nombre_funcionario;
-    }
-
-    public function getApellido_funcionario() {
-        return $this->apellido_funcionario;
     }
 
     public function getId_funcionario() {
         return $this->id_funcionario;
     }
 
-    public function getUsuario_funcionario() {
-        return $this->usuario_funcionario;
+    public function getDocumento_funcionario() {
+        return $this->documento_funcionario;
     }
 
-    public function setNombre_funcionario($nombre_funcionario) {
-        $this->nombre_funcionario = $nombre_funcionario;
-        return $this;
-    }
-
-    public function setApellido_funcionario($apellido_funcionario) {
-        $this->apellido_funcionario = $apellido_funcionario;
-        return $this;
+    public function getCargo_funcionario() {
+        return $this->cargo_funcionario;
     }
 
     public function setId_funcionario($id_funcionario) {
         $this->id_funcionario = $id_funcionario;
-        return $this;
     }
 
-    public function setUsuario_funcionario($usuario_funcionario) {
-        $this->usuario_funcionario = $usuario_funcionario;
-        return $this;
+    public function setDocumento_funcionario($documento_funcionario) {
+        $this->documento_funcionario = $documento_funcionario;
     }
+
+    public function setCargo_funcionario($cargo_funcionario) {
+        $this->cargo_funcionario = $cargo_funcionario;
+    }
+
+
 
 
     

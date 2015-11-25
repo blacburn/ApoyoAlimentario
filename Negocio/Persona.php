@@ -1,25 +1,30 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-class Persona{
-    
+class Persona {
+
     private $documento_persona;
     private $nombre_persona;
     private $apellido_persona;
     private $tipo_persona;
     private $genero_persona;
     private $usuario_persona;
+    private $correo_persona;
+
     //private $codigo_persona;
-    
+
     public function __construct() {
         
     }
 
+    public function getCorreo_persona() {
+        return $this->correo_persona;
+    }
 
     public function getDocumento_persona() {
         return $this->documento_persona;
@@ -44,9 +49,16 @@ class Persona{
     public function getUsuario_persona() {
         return $this->usuario_persona;
     }
-  /*public function getCodigo_persona() {
-        return $this->codigo_persona;
-    }*/
+
+    /* public function getCodigo_persona() {
+      return $this->codigo_persona;
+      } */
+    
+    
+    public function setCorreo_persona($correo_persona) {
+        $this->correo_persona = $correo_persona;
+    }
+
     public function setDocumento_persona($documento_persona) {
         $this->documento_persona = $documento_persona;
         return $this;
@@ -78,13 +90,7 @@ class Persona{
     }
 
     /* public function setCodigo_persona($codigo_persona) {
-        $this->codigo_persona = $codigo_persona;
-        return $this;
-    }*/
-
- 
-    
-    
-    
-    
+      $this->codigo_persona = $codigo_persona;
+      return $this;
+      } */
 }
