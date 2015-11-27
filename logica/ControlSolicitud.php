@@ -14,11 +14,14 @@ class ControlSolicitud{
         $this->solicitudDAO=new SolicitudDAO();       
     }
     
-    function CrearSolicitud($codigo,$id_convocatoria,$soportes_solicitud){
+    function CrearSolicitud($id_solicitud,$id_estudiante,$id_convocatoria,$puntaje,$val_solicitud){
         $this->solicitud = new Solicitud();
-        $this->solicitud->setCodigo_estudiante($codigo);
-         $this->solicitud->setId_convocatoria($id_convocatoria);
-        $this->solicitud->setSoportes_solicitud($soportes_solicitud);
+        $this->solicitud->setId_solicitud($id_solicitud);
+        $this->solicitud->setCodigo_estudiante($id_estudiante);
+        $this->solicitud->setId_convocatoria($id_convocatoria);
+        $this->solicitud->setPuntaje($puntaje);
+        $this->solicitud->setVal_solicitud($val_solicitud);
+        
         $this->solicitudDAO->crearSolicitud($this->solicitud); 
     }
     
@@ -26,23 +29,23 @@ class ControlSolicitud{
         return $this->solicitudDAO->buscarSolicitudxId($id_solicitud);      
     }
     
-    public function buscarSolicitudxFacultad($id_facultad){
-        return $this->solicitudDAO->buscarSolicitudxFacultad($id_facultad);      
-    }
+//    public function buscarSolicitudxFacultad($id_facultad){
+//        return $this->solicitudDAO->buscarSolicitudxFacultad($id_facultad);      
+//    }
     
     public function verSolicitudes(){
         return $this->solicitudDAO->buscarSolicitudes();
     }
             
-      function modificarSolicitud($codigo,$id_solicitud,$id_convocatoria,$id_facultad,$soportes_solicitud){
+      function modificarSolicitud($id_solicitud,$id_estudiante,$id_convocatoria,$puntaje,$val_solicitud){
         $this->solicitud = new Solicitud();
-        $this->solicitud->setCodigo_estudiante($codigo);
         $this->solicitud->setId_solicitud($id_solicitud);
+        $this->solicitud->setCodigo_estudiante($id_estudiante);
         $this->solicitud->setId_convocatoria($id_convocatoria);
-        $this->solicitud->setId_facultad($id_facultad);
-        $this->solicitud->setSoportes_solicitud($soportes_solicitud);
+        $this->solicitud->setPuntaje($puntaje);
+        $this->solicitud->setVal_solicitud($val_solicitud);
         $this->solicitudDAO->modificarSolicitud($this->solicitud); 
-    }
+    }  
      public function eliminarSolicitud($id_solicitud){
         return $this->solicitudDAO->eliminarSolicitud($id_solicitud);      
     }

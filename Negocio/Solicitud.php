@@ -7,11 +7,11 @@
  */
 
 class Solicitud{
+    private $id_solicitud;
     private $codigo_estudiante;
     private $id_convocatoria;
-    private $id_solicitud;
     private $puntaje;
-
+    private $val_solicitud;
     
     public function __construct() {
         
@@ -48,6 +48,15 @@ class Solicitud{
     public function setPuntaje($puntaje) {
         $this->puntaje = $puntaje;
     }
+    
+    public function getVal_solicitud() {
+        return $this->val_solicitud;
+    }
+
+    public function setVal_solicitud($val_solicitud) {
+        $this->val_solicitud = $val_solicitud;
+    }
+
 
 
     

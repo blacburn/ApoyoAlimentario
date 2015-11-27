@@ -17,6 +17,7 @@ class Condicion_SE {
     private $nombre_condicion;
     private $puntaje;
     
+    
     public function __construct() {
         
     }
