@@ -33,6 +33,7 @@ include '../logica/ControlCondicion_SE.php';
             $sesion = $conn->getConn();
             $_SESSION['sesion_logueado'] = $sesion;            
         }
+//        $auxPersona = new Persona();
         $cPersona = new ControlPersona();
         $cTipoCondicion_SE = new ControlTipoCondicion_SE();
         $cCondicion_SE = new ControlCondicion_SE();
@@ -60,9 +61,19 @@ include '../logica/ControlCondicion_SE.php';
                 
        <?php 
         if (isset($_POST['submit'])) {
-            $cPersona->buscarPersonaxDocumento($_POST['documento_persona']);
-          
             
+            $auxPersona=$cPersona->buscarPersonaxDocumento($_POST['documento_persona']);
+            echo $auxPersona->getTipo_persona();
+            $aca=$auxPersona->getTipo_persona();
+            if(!empty($aca)){
+                echo "<script>alert('Registrado')</script>";
+                $cPersona->registrarPersona($auxPersona);
+                
+            }
+            else {
+                echo "<script>alert('Errorrrrrrr' )</script>";
+                
+            }
             
             
             

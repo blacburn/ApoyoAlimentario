@@ -65,6 +65,22 @@ class PersonaDAO {
          
     }
     
+     public function registrarPersona($persona) {
+         $sqltxt="create user ".$persona->getUsuario_persona()." identified by ".$persona->getUsuario_persona()." default tablespace apoyo_def temporary tablespace apoyo_tm quota 10M on apoyo_def";
+         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+         oci_execute($stid);
+          echo $sqltxt; 
+         $sqltxt="grant R_".$persona->getTipo_persona()." to ".$persona->getUsuario_persona()."";
+         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+         oci_execute($stid);
+          echo $sqltxt;
+         $sqltxt="grant create session, connect to ".$persona->getUsuario_persona()."";
+         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+         oci_execute($stid);
+          echo $sqltxt;
+         
+    }
+    
      public function modificarPersona($persona) {
         $sqltxt="update s_persona set nombre_per='".$persona->getNombre_persona()."',apellido_per='".$persona->getApellido_persona()."',tipo='".$persona->getTipo_persona()."',usuario='".$persona->getUsuario_persona()."',genero='".$persona->getGenero_persona()."',documento=".$persona->getDocumento_persona()." where codigo=".$persona->getCodigo_persona()."";
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);

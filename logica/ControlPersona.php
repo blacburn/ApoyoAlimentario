@@ -39,6 +39,10 @@ class ControlPersona{
         return $this->personaDAO->buscarPersonaxDocumento($documento);      
     }
     
+    public function registrarPersona($persona){
+        $this->personaDAO->registrarPersona($persona);      
+    }
+    
     public function modificarPersona($codigo_persona,$nombre_persona,$apellido_persona,$tipo_persona,$usuario,$genero,$documento){
         $this->persona = new Persona();
        // $this->persona->setCodigo_persona($codigo_persona);
