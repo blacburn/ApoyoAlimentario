@@ -34,6 +34,27 @@ class PersonaDAO {
         return $persona;
     }
     
+    public function buscarPersonaxDocumento($documento) {
+        
+        $persona = new Persona();
+        $sqltxt = "select * from s_persona where k_documento = '".$documento."'";
+        $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        oci_execute($stid);
+        while(oci_fetch($stid)) {
+
+            $persona->setDocumento_persona(oci_result($stid, 'K_DOCUMENTO'));
+            $persona->setNombre_persona(oci_result($stid, 'N_NOMPER'));
+            $persona->setApellido_persona(oci_result($stid, 'N_APEPER'));
+            $persona->setUsuario_persona(oci_result($stid, 'N_USUARIO'));
+            $persona->setTipo_persona(oci_result($stid, 'T_TIPO'));
+            $persona->setGenero_persona(oci_result($stid, 'N_GENERO'));
+            $persona->setCorreo_persona(oci_result($stid, 'N_CORREO'));
+            
+        }
+        //echo $persona->getApellido_persona();
+        return $persona;
+    } 
+    
  
     
     public function crearPersona($persona) {

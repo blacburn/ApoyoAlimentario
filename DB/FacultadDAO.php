@@ -6,43 +6,76 @@
  */
 
 /**
- * Description of EstudianteDAO
+ * Description of FacultadDAO
  *
  * @author ANDREY
  */
-include '../Negocio/Funcionario.php';
 
-class FuncionarioDAO {
+include '../Negocio/Facultad.php';
+
+class FacultadDAO {
     //put your code here
+    
     public function __construct() {
         
     }
 
-    public function buscarFuncionarioxDocumento($documento) {
-        
-        $funcionario = new Funcionario();
-        $sqltxt = "select * from s_funcionario where k_documento = ".$documento."";
+    public function crearFacultad($facultad){
+       // $facultad =new Facultad();
+       //$facultad->getNombre_facultad();
+       //$conn = new ConexionDB("apoyo_alimentario", "apoyo_alimentario");
+       // $conn->conectarDB();
+       //session_start();
+        //$se=$conn->getConn();
+        //echo $_SESSION['sesion_logueado'];
+        $sqltxt="insert into facultad values(id_facultad.nextval,'".$facultad->getNombre_facultad()."')";
+            $stid = oci_parse($_SESSION['sesion_logueado'],$sqltxt);
+            oci_execute($stid);   
+    }
+    public function eliminarFacultad($id_facultad){
+        $sqltxt="delete FROM facultad where id_facultad=".$id_facultad."";
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
-        //echo $sqltxt;
         oci_execute($stid);
-        while(oci_fetch($stid)) {
-            //$persona->setCodigo_persona(oci_result($stid, 'CODIGO'));
-            $funcionario->setId_funcionario(oci_result($stid, 'K_IDFUNCIONARIO'));
-            $funcionario->setDocumento_funcionario(oci_result($stid, 'K_DOCUMENTO'));
-            $funcionario->setCargo_funcionario(oci_result($stid, 'N_CARGO'));
-        }
-        //echo (string)$estudiante->getCodigo_estudiante();
-        //echo $estudiante->getCarrera_estudiante();
-        //echo $estudiante->getMatriculas_estudiante();
-        //echo $estudiante->getCodigo_estudiante();
-        //echo $persona->getApellido_persona();
-        return $funcionario;
+        
+        
+    }
+    public function modificarFacultad($facultad){
+        $sqltxt="update facultad set nombre_facultad='".$facultad->getNombre_facultad()."' where id_facultad=".$facultad->getId_facultad()."";
+        $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        oci_execute($stid);
+        
+        
     }
     
-   
+     public function buscarFacultad($id_facultad){
+         $facultad = new Facultad();
+        $sqltxt = "select * from facultad where id_facultad = ".$id_facultad."";
+        $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        oci_execute($stid);
+        while(oci_fetch($stid)) {
+            $facultad->setIdfacultad(oci_result($stid, 'ID_FACULTAD'));
+            $facultad->setNombre_facultad(oci_result($stid, 'NOMBRE_FACULTAD'));
+          
+        }
+        //echo $persona->getApellido_persona();
+        return $facultad;
+    }
     
- 
-   
+    public function verFacultades(){        
+        $facultades = array();
+        $i=0;
+        //$facultades=new ArrayObject($array);
+        $sqltxt = "select * from facultad";
+        $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        oci_execute($stid);
+        while(oci_fetch_array($stid)) {
+            $facultad = new Facultad();
+            $facultad->setIdfacultad(oci_result($stid, 'ID_FACULTAD'));
+            $facultad->setNombre_facultad(oci_result($stid, 'NOMBRE_FACULTAD'));
+            $facultades[$i]=$facultad;
+            //echo $facultades[$i]->getNombre_facultad();
+            $i+=1;
+        }        
+        return $facultades;
+    }
 }
-
-?>

@@ -25,7 +25,7 @@ include '../DB/ConexionDB.php';
                     <li class="selected">
                         <a href="login.php">Entrar</a>
                     </li>
-
+                    
                 </ul>
             </div>
         </div>
