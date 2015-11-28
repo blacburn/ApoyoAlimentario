@@ -140,9 +140,9 @@ and open the template in the editor.
                                             $cond = new ControlCondicion_SE();
                                             foreach ($tipo_cond->verTipos_Condiciones() as $tipo) {
                                                 echo '<div class="containerl2">';
-                                                echo '';
+                                                echo '<div class="col-sm-12">';
                                                 echo '<div class="container" style="width: 1075px">';
-                                                echo '<center><h3 class="form-signin-heading">' . $tipo->getNombre_tipo_condicion() . '</h3></center>';
+                                                echo '<center><h3 class="form-signin-heading">' . $tipo->getNombre_tipo_condicion() . '</h3></center></div>';
                                                 //$condi=new Condicion_SE();
                                                 foreach ($cond->verCondiciones_SE($tipo->getId_tipo_condicion()) as $condi) {
                                                     echo '<div class="col-sm-6">';
@@ -155,8 +155,10 @@ and open the template in the editor.
                                                     echo '</div>';
                                                     //$contador+=1;
                                                 }
+                                                    echo '<div class="col-sm-12"><center>';
+                                                    echo '<br> <input name="file[]" value="'.$tipo->getId_tipo_condicion().'" type="file"  /></center></div>';
+                                                
                                                 echo '</div>';
-
                                                 echo '<hr>';
                                                 echo '</div>';
                                             }
@@ -192,8 +194,7 @@ and open the template in the editor.
 
 
 
-                                        <center><h2> Enviar este fichero:</h2>
-                                            <br> <input name="file" type="file"  /></center>
+                                        
 
                                     </div>
 
