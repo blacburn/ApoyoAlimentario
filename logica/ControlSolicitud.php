@@ -14,13 +14,13 @@ class ControlSolicitud{
         $this->solicitudDAO=new SolicitudDAO();       
     }
     
-    function CrearSolicitud($id_solicitud,$id_estudiante,$id_convocatoria,$puntaje,$val_solicitud){
+    function CrearSolicitud($id_estudiante,$id_convocatoria){//,$puntaje,$val_solicitud){
         $this->solicitud = new Solicitud();
-        $this->solicitud->setId_solicitud($id_solicitud);
+        //$this->solicitud->setId_solicitud($id_solicitud);
         $this->solicitud->setCodigo_estudiante($id_estudiante);
         $this->solicitud->setId_convocatoria($id_convocatoria);
-        $this->solicitud->setPuntaje($puntaje);
-        $this->solicitud->setVal_solicitud($val_solicitud);
+        //$this->solicitud->setPuntaje($puntaje);
+        $this->solicitud->setVal_solicitud("NO");
         
         $this->solicitudDAO->crearSolicitud($this->solicitud); 
     }

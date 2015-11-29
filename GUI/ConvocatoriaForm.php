@@ -107,7 +107,7 @@ include '../logica/ControlConvocatoria.php';
         if (isset($_POST['submit'])) {
             //$id_facu= (string)$_POST['facultad'];
             //echo $id_facu;
-            $cConvocatoria->crearConvocatoria($_POST['cupos'],$_POST['fechaI'],$_POST['fechaF'], $_POST['periodo'],$_POST['facultad']);
+            $cConvocatoria->crearConvocatoria($_POST['cupos'],$_POST['fechaI'],$_POST['fechaF'], $_POST['periodo'],$_POST['facultad'],'SI');
             //echo $_POST['facultad'];
             //echo $_POST['cupos'];
             //echo $_POST['periodo'];

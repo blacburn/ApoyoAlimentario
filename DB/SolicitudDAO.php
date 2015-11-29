@@ -72,7 +72,7 @@ class SolicitudDAO {
 
     public function CrearSolicitud($solicitud) {
 //        $solicitud=NEW Solicitud();
-        $sqltx="insert into s_solicitud values(sq_idsolicitud.nextval,'".$solicitud->getCodigo_estudiante()."',".$solicitud->getId_convocatoria().",".$solicitud->getPuntaje().",'".$solicitud->getVal_solicitud()."')";
+        $sqltx="insert into s_solicitud values(SQ_IDSOLICITUD.nextval,'".$solicitud->getCodigo_estudiante()."',".$solicitud->getId_convocatoria().",NULL,'".$solicitud->getVal_solicitud()."')";
         echo $sqltx;
         $stmt = oci_parse($_SESSION['sesion_logueado'],$sqltx);
         oci_execute($stmt);

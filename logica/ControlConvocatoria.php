@@ -15,7 +15,7 @@ class ControlConvocatoria{
        $this->convocatoriaDAO = new ConvocatoriaDAO();     
     }
     
-    public function crearConvocatoria($cupos,$fecha_inicio,$fecha_fin,$periodo,$id_facultad){
+    public function crearConvocatoria($cupos,$fecha_inicio,$fecha_fin,$periodo,$id_facultad,$b_activa){
         
         $this->convocatoria=new Convocatoria();        
         $this->convocatoria->setCupos($cupos);
@@ -23,6 +23,7 @@ class ControlConvocatoria{
         $this->convocatoria->setFecha_fin($fecha_fin);   
         $this->convocatoria->setPeriodo($periodo);
         $this->convocatoria->setId_facultad($id_facultad);
+        $this->convocatoria->setB_activa($b_activa);
         //echo $this->convocatoria->getId_facultad();
         $this->convocatoriaDAO->crearConvocatoria($this->convocatoria);
     }
