@@ -68,7 +68,17 @@ class SolicitudDAO {
         return $solicitudes;
     }
 
-    
+    public function buscarIdSolicitud($idestu, $idconvoc){
+         $idsol;       
+        $sqltxt = "select k_idsolicitud from s_solicitud where k_estudiante = '".$idestu."' and k_convocatoria =".$idconvoc;
+        $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        oci_execute($stid);
+        while(oci_fetch($stid)) {
+            $idsol=oci_result($stid, 'K_IDSOLICITUD');            
+        }
+        return $idsol;
+        
+    }
 
     public function CrearSolicitud($solicitud) {
 //        $solicitud=NEW Solicitud();

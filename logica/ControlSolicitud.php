@@ -14,7 +14,7 @@ class ControlSolicitud{
         $this->solicitudDAO=new SolicitudDAO();       
     }
     
-    function CrearSolicitud($id_estudiante,$id_convocatoria){//,$puntaje,$val_solicitud){
+    public function CrearSolicitud($id_estudiante,$id_convocatoria){//,$puntaje,$val_solicitud){
         $this->solicitud = new Solicitud();
         //$this->solicitud->setId_solicitud($id_solicitud);
         $this->solicitud->setCodigo_estudiante($id_estudiante);
@@ -25,6 +25,10 @@ class ControlSolicitud{
         $this->solicitudDAO->crearSolicitud($this->solicitud); 
     }
     
+    public function buscarIdSolicitud($idestu, $idconvoc){        
+        return $this->solicitudDAO->buscarIdSolicitud($idestu, $idconvoc);      
+    }
+   
     public function buscarSolicitudxId($id_solicitud){
         return $this->solicitudDAO->buscarSolicitudxId($id_solicitud);      
     }

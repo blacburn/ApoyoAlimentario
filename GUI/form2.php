@@ -109,12 +109,14 @@ and open the template in the editor.
                                 if($estudiante->getActivo_estudiante()=='SI'){
                                 if ($estudiante->getAval_solicitud()=='SI'){
                                 $cSolictud->CrearSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);//, $archivo_temp);
+                                $idsolicitud=$cSolictud->buscarIdSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);
                                 $cEstudiante->banderaActivo_solicitud($estudiante);
                                 foreach ($_POST['seleccion'] as $sel) {
                                     echo $sel;
-                                    echo "--->".$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)."   AQUIIIIIIIIIIIIIIIIIIIIII";
+                                    echo "--->(".$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)." )  AQUIIIIIIIIIIIIIIIIIIIIII";
                                     echo "entroo";
-                                   /// $cCondicionxSolicitud->crearCondicionxSolicitud($estudiante_codigo, $sel, $_POST['id_convocatoriasol'], "na",$_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)]);
+                                    //$id_condicion,$id_solicitud,$descripcion,$soportes_solicitud,$validado
+                                   $cCondicionxSolicitud->crearCondicionxSolicitud($sel, $idsolicitud, "na",$_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)-1],'NO');
                                 }
                                 }else{                                
                                 echo '<script type="text/javascript">alert("El Estudiante Ya tiene una solicitud enviada");</script>';                                    

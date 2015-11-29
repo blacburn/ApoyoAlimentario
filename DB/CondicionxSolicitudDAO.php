@@ -32,15 +32,16 @@ class CondicionxSolicitudDAO {
     }
     
     public function verTipoCondicionxSolicitud($idcond){
-        
-        $idtipo;
+        //echo $idcond.">-----------id";        
         $sqltxt="select t_condicion from s_condicion_se where k_idcondicion = ".$idcond;
         $stid = oci_parse($_SESSION['sesion_logueado'],$sqltxt);        
         oci_execute($stid);
         
           while(oci_fetch($stid)) {
+             // echo "---------->".oci_result($stid, 'T_CONDICION')."<----ENTRO WHILE";
               $idtipo=oci_result($stid, 'T_CONDICION');
           }
+          //echo "(".$idtipo.")";
           return $idtipo;
     }
 
