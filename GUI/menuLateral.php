@@ -70,13 +70,13 @@
 
                     </li>
                     
-                    <li class="lib">
+<!--                    <li class="lib">
                         <a href="Registro.php">
                             <div class="barra"></div>
                             <p class="menu">Registro</p>
                         </a>
 
-                    </li>
+                    </li>-->
                     
                     <li class="lib">
                         <a href="../puente/Salir.php">

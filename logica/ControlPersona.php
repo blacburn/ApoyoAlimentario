@@ -43,6 +43,16 @@ class ControlPersona{
         $this->personaDAO->registrarPersona($persona);      
     }
     
+    public function registrarPersonaxUC($tipoPersona,$usuario,$clave){
+        $this->personaDAO->registrarPersonaxUC($tipoPersona,$usuario,$clave);      
+    }
+    
+    public function actualizarPersona($documento,$usuario,$correo){
+        
+        
+        $this->personaDAO->actualizarPersona($documento,$usuario,$correo);      
+    }
+    
     public function modificarPersona($codigo_persona,$nombre_persona,$apellido_persona,$tipo_persona,$usuario,$genero,$documento){
         $this->persona = new Persona();
        // $this->persona->setCodigo_persona($codigo_persona);

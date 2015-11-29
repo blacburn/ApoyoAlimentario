@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/FacultadDAO.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/info.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/menuLateral.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/PersonaDAO.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/Salir.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/menu.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/login.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlPersona.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/ConexionDB.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/index.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/sesion.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/registro.php</file>
+        </group>
     </open-files>
 </project-private>
