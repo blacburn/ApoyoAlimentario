@@ -29,7 +29,7 @@ class ControlCondicionxSolicitud {
     }
     
     public function verTipoCondicionxSolicitud($idcond){
-        $this->condicionxsolicitudDAO->verTipoCondicionxSolicitud($idcond);
+        return $this->condicionxsolicitudDAO->verTipoCondicionxSolicitud($idcond);
     }
 
 
