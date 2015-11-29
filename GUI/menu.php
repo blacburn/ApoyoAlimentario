@@ -43,6 +43,9 @@ include './menuLateral.php';
                     echo "Bienvenido  ".$persona->getNombre_persona()." ".$persona->getApellido_persona(); //->getNombre_persona()." ".$persona->getTipo_persona();
                     //echo $_SESSION['usuario_logueado'];
                 }
+                else{
+                     header("Location: login.php");
+                }
                 ?>
             </h2></center>
 

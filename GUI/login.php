@@ -25,7 +25,9 @@ include '../DB/ConexionDB.php';
                     <li class="selected">
                         <a href="login.php">Entrar</a>
                     </li>
-                    
+                    <li >
+                        <a href="registro.php">Registrarse</a>
+                    </li>
                 </ul>
             </div>
         </div>
