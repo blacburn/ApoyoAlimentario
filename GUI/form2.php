@@ -107,7 +107,7 @@ and open the template in the editor.
                                //eciho $archivo_temp;
                               //$estudiante=new Estudiante();
                                 if($estudiante->getActivo_estudiante()=='SI'){
-                                if ($estudiante->getAval_solicitud()=='SI'){
+                                if ($estudiante->getAval_solicitud()=='NO'){
                                 $cSolictud->CrearSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);//, $archivo_temp);
                                 $idsolicitud=$cSolictud->buscarIdSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);
                                 $cEstudiante->banderaActivo_solicitud($estudiante);
