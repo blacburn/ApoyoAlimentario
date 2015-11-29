@@ -16,18 +16,24 @@ class ControlCondicionxSolicitud {
         $this->condicionxsolicitudDAO=new CondicionxSolicitudDAO();        
     }
     
-    public function crearCondicionxSolicitud($codigo_est,$id_condicion,$id_convocatoria,$descripcion){
+    public function crearCondicionxSolicitud($id_condicion,$id_solicitud,$descripcion,$soportes_solicitud,$validado){
         $this->condicionxsolicitud = new CondicionxSolicitud();
-        $this->condicionxsolicitud->setCodigo_est($codigo_est);
         $this->condicionxsolicitud->setId_condicion($id_condicion);
-        $this->condicionxsolicitud->setId_convocatoria($id_convocatoria);
-        $this->condicionxsolicitud->setDescripcion($descripcion);
+        $this->condicionxsolicitud->setId_solicitud($id_solicitud);
+        $this->condicionxsolicitud->setDescripcion($descripcion);        
+        $this->condicionxsolicitud->setSoportes_solicitud($soportes_solicitud);
+        $this->condicionxsolicitud->setValidado($validado);        
         
         $this->condicionxsolicitudDAO->crearCondicionxSolicitud($this->condicionxsolicitud);        
         
     }
     
-      public function verCondicionxSolicitudxSolicitud($solicitud){
+    public function verTipoCondicionxSolicitud($idcond){
+        $this->condicionxsolicitudDAO->verTipoCondicionxSolicitud($idcond);
+    }
+
+
+    public function verCondicionxSolicitudxSolicitud($solicitud){
           
           return $this->condicionxsolicitudDAO->verCondicionxSolicitudxSolicitud($solicitud);
       }

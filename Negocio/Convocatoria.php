@@ -18,12 +18,21 @@ class Convocatoria {
     private $fecha_fin;
     private $cupos;
     private $periodo;
+    private $b_activa;
     
           public function __construct() {
         
     }
-   
-    public function getId_convocatoria() {
+    
+    public function getB_activa() {
+        return $this->b_activa;
+    }
+
+    public function setB_activa($b_activa) {
+        $this->b_activa = $b_activa;
+    }
+
+        public function getId_convocatoria() {
         return $this->id_convocatoria;
     }
 

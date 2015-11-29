@@ -23,30 +23,44 @@ class CondicionxSolicitudDAO {
     public function crearCondicionxSolicitud($condicionxsolicitud){
         //$condicionxsolicitud=new CondicionxSolicitud();
         
-        $sqltxt="insert into s_CondicionxSolicitud values(".$condicionxsolicitud->getId_condicion().",'".$condicionxsolicitud->getCodigo_est()."',".
-                $condicionxsolicitud->getId_convocatoria().",'".$condicionxsolicitud->getDescripcion()."')";
+        $sqltxt="insert into s_CondicionSolicitud values(".$condicionxsolicitud->getId_condicion().",".$condicionxsolicitud->getId_solicitud().",'".
+                $condicionxsolicitud->getDescripcion()."','".$condicionxsolicitud->getSoportes_solicitud()."','".$condicionxsolicitud->getValidado()."')";
         //echo $sqltxt;
         $stid = oci_parse($_SESSION['sesion_logueado'],$sqltxt);
         oci_execute($stid);
         
     }
     
+    public function verTipoCondicionxSolicitud($idcond){
+        
+        $idtipo;
+        $sqltxt="select t_condicion from s_condicion_se where k_idcondicion = ".$idcond;
+        $stid = oci_parse($_SESSION['sesion_logueado'],$sqltxt);        
+        oci_execute($stid);
+        
+          while(oci_fetch($stid)) {
+              $idtipo=oci_result($stid, 'T_CONDICION');
+          }
+          return $idtipo;
+    }
+
+
     public function verCondicionxSolicitudxSolicitud($solicitud){
         
         $condiciones = array();
         //$solicitud=new Solicitud();
         $i=0;
         //$facultades=new ArrayObject($array);
-        $sqltxt = "select * from s_condicionxsolicitud where codigo_est ='".$solicitud->getCodigo_estudiante().
-                "' and id_convocatoria=".$solicitud->getId_convocatoria();
+        $sqltxt = "select * from s_condicionsolicitud where k_solicitud =".$solicitud->getId_solicitud();
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
         oci_execute($stid);
         while(oci_fetch_array($stid)) {
             $condicionxsolicitud = new CondicionxSolicitud();
-            $condicionxsolicitud->setCodigo_est(oci_result($stid, 'CODIGO_EST'));
-            $condicionxsolicitud->setId_condicion(oci_result($stid, 'ID_CONDICION'));
-            $condicionxsolicitud->setId_convocatoria(oci_result($stid, 'ID_CONVOCATORIA'));
-            $condicionxsolicitud->setDescripcion(oci_result($stid, 'DESCRIPCION'));
+            $condicionxsolicitud->setId_condicion(oci_result($stid, 'K_CONDICION'));
+            $condicionxsolicitud->setId_solicitud(oci_result($stid, 'K_SOLICITUD'));            
+            $condicionxsolicitud->setDescripcion(oci_result($stid, 'N_DESCRIPCION'));
+            $condicionxsolicitud->setSoportes_solicitud(oci_result($stid, 'N_SOPORTE'));
+            $condicionxsolicitud->setValidado(oci_result($stid, 'N_VALIDADO'));
 
 
             $condiciones[$i]=$condicionxsolicitud;
