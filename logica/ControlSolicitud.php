@@ -40,6 +40,8 @@ class ControlSolicitud{
     public function verSolicitudes(){
         return $this->solicitudDAO->buscarSolicitudes();
     }
+    
+    
             
       function modificarSolicitud($id_solicitud,$id_estudiante,$id_convocatoria,$puntaje,$val_solicitud){
         $this->solicitud = new Solicitud();

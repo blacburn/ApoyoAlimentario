@@ -17,7 +17,8 @@ include '../logica/ControlCondicion_SE.php';
         <title>Solicitudes</title>
         <link href="../public/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../public/css/index_style.css">
-        <link rel="stylesheet" href="../public/css/style.css" type="text/css">        
+        <link rel="stylesheet" href="../public/css/style.css" type="text/css"> 
+        
         <script src="../public/js/bootstrap.min.js"></script> 
     </head>
     <body>
@@ -27,18 +28,88 @@ include '../logica/ControlCondicion_SE.php';
         // put your code here
         ?>
         
+        
+        
+        <form action="#"  method="post">
+            <div>
+                    <h3>Solicitudes</h3>
+            </div>
+            
+            <SELECT name='categoria' SIZE='1' onchange='' class="col-sm-2">
+               
+               <OPTION VALUE="Todos">Todas las categorias</option>
+               <OPTION VALUE="Convocatoria">Convocatoria</option>
+               <OPTION VALUE="Carrera">Carrera</option>
+               
+<!--               <OPTION VALUE="estadoValidado">Estado</option>
+               <OPTION VALUE="Puntaje">Puntaje</option>
+               <OPTION VALUE="Codigo">Codigo Estudiante</option>
+               <OPTION VALUE="Periodo">Periodo</option>-->
+               
+            </SELECT>   
+                    <div class="col-sm-2"> 
+                        <button class= "btn btn-primary btn-block" type="submit" name="submit">Buscar</button>  
+                    </div>
+
+        </form>
+        
         <div class="col-sm-10">
             <?php
+            
         $conn = new ConexionDB($_SESSION['usuario_login'], $_SESSION['password_login']);
-        if ($conn->conectarDB()) {
-            $sesion = $conn->getConn();
-            $_SESSION['sesion_logueado'] = $sesion;
-        }
         $cSolicitud=new ControlSolicitud();
         $cCondicionxsolicitud=new ControlCondicionxSolicitud();
         $cCondicion_SE= new ControlCondicion_SE();
+        $A=new Condicion_SE();
+        if ($conn->conectarDB()) {
+            $sesion = $conn->getConn();
+            $_SESSION['sesion_logueado'] = $sesion;
+           
+            if(!isset($_POST['categoria']) || ($_POST['categoria']=="Todos")){
+                echo '<br><br>';
+                TablaReporte($cSolicitud);
+                
+                
+                
+                
+            }
+            else{ 
+                echo '<SELECT name="subcategoria" SIZE="1" onchange="" class="col-sm-2"><OPTION VALUE="estadoValidado">Estado</option><OPTION VALUE="Puntaje">Puntaje</option><OPTION VALUE="Codigo">Codigo Estudiante</option><OPTION VALUE="Periodo">Periodo</option></SELECT><br><br> ';
+                
+                if(($_POST['subcategoria']=="estadoValidado")){
+                     TablaReporte($cSolicitud);
+                }
+                
+                
+                
+            }
+        }
+        
+        function TablaReporte($cSolicitud){
+            $cSolicitud->verSolicitudes();
+            echo '<table id="reporte" class="table table-bordered"> '
+                 . '<thead><tr><th>'."ID SOLICITUD".'</th><th>'."CODIGO ESTUDIANTE".'</th><th>'."CONVOCATORIA".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th></tr></thead>'
+                        . '<tbody>';
+                        foreach($cSolicitud->verSolicitudes() as $soli){
+                            
+                            $i=1;
+                            echo '<tr><td>'.$soli->getId_solicitud(). ' </td> <td>'.$soli->getCodigo_estudiante().'  </td> <td>'.$soli->getId_convocatoria().' </td> <td>'.$soli->getPuntaje().' </td> <td>'.$soli->getId_solicitud().' </td></tr>';
+                            $i+=1;
+                        }
+                        '</tbody></table>';
+            
+        }
+        
+        
+        
         
         ?>
+            
+            
+            
+            
+            
+            
         <table class="table table-bordered">
             <thead>
                 <tr><th>Id Convocatoria</th><th> Codigo estudiante</th><th>link</th><th>Condiciones</th></tr>

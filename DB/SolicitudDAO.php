@@ -68,6 +68,8 @@ class SolicitudDAO {
         return $solicitudes;
     }
 
+    
+    
     public function buscarIdSolicitud($idestu, $idconvoc){
          $idsol;       
         $sqltxt = "select k_idsolicitud from s_solicitud where k_estudiante = '".$idestu."' and k_convocatoria =".$idconvoc;

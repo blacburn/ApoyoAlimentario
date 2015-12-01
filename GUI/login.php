@@ -34,6 +34,32 @@ include '../DB/ConexionDB.php';
         <br><br>
         <?php
         if (isset($_POST['submit'])) {
+//            error_reporting(E_ALL);
+//require("../GUI/PHPMailer_5.2.4/PHPMailer_5.2.4/class.phpmailer.php");
+//$mail = new PHPMailer();
+//$mail->IsSMTP(); // set mailer to use SMTP
+//$mail->SMTPDebug  = 2; 
+//$mail->From = "andreyblue14@gmail.com";
+//$mail->FromName = "Andrey";
+//$mail->Host = "smtp.gmail.com"; // specif smtp server
+//$mail->SMTPSecure= "ssl"; // Used instead of TLS when only POP mail is selected
+//$mail->Port = 465; // Used instead of 587 when only POP mail is selected
+//$mail->SMTPAuth = true;
+//$mail->Username = "andreyblue14@gmail.com"; // SMTP username
+//$mail->Password = "Blacburnfulham14"; // SMTP password
+//$mail->AddAddress("andreysa0114@hotmail.com", "andreysa0114@hotmail.com"); //replace myname and mypassword to yours
+//$mail->AddReplyTo("jiansentest@gmail.com", "Jiansen");
+//$mail->WordWrap = 50; // set word wrap
+////$mail->AddAttachment("c:\\temp\\js-bak.sql"); // add attachments
+////$mail->AddAttachment("c:/temp/11-10-00.zip");
+//
+//$mail->IsHTML(true); // set email format to HTML
+//$mail->Subject = 'Apoyo Alimentario';
+//$mail->Body = 'Le comunicamos que ha sido beneficiado del apoyo alimentario';
+//
+//if($mail->Send()) {echo "Send mail successfully";}
+//else {echo "Send mail fail";} 
+//            mail( "andreyblue14@gmail.com" , "Correo" , "Holaaaaa" );
             //include '../DB/ConexionDB.php';
             $conn = new ConexionDB($_POST['usuario_login'], $_POST['password_login']);
             if ($conn->conectarDB()) {
@@ -44,6 +70,8 @@ include '../DB/ConexionDB.php';
                 $_SESSION['sesion_logueado'] = $conn->getConn();
                 $_SESSION['usuario_login'] = $usuario_login;
                 $_SESSION['password_login'] = $usuario_password;
+                
+               
                 //$_SESSION['sesion_logueado'];
                 /*$cPersona=  new ControlPersona();
                 $persona=new Persona();
