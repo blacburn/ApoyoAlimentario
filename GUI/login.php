@@ -39,16 +39,16 @@ include '../DB/ConexionDB.php';
 //$mail = new PHPMailer();
 //$mail->IsSMTP(); // set mailer to use SMTP
 //$mail->SMTPDebug  = 2; 
-//$mail->From = "andreyblue14@gmail.com";
-//$mail->FromName = "Andrey";
+//$mail->From = "apoyoalimentarioUD@gmail.com";
+//$mail->FromName = "Apoyo Alimentario UD";
 //$mail->Host = "smtp.gmail.com"; // specif smtp server
 //$mail->SMTPSecure= "ssl"; // Used instead of TLS when only POP mail is selected
 //$mail->Port = 465; // Used instead of 587 when only POP mail is selected
 //$mail->SMTPAuth = true;
-//$mail->Username = "andreyblue14@gmail.com"; // SMTP username
-//$mail->Password = "Blacburnfulham14"; // SMTP password
+//$mail->Username = "apoyoalimentarioUD@gmail.com"; // SMTP username
+//$mail->Password = "apoyo20152"; // SMTP password
 //$mail->AddAddress("andreysa0114@hotmail.com", "andreysa0114@hotmail.com"); //replace myname and mypassword to yours
-//$mail->AddReplyTo("jiansentest@gmail.com", "Jiansen");
+//$mail->AddReplyTo("apoyoalimentarioUD@gmail.com", "Apoyo Alimentario UD");
 //$mail->WordWrap = 50; // set word wrap
 ////$mail->AddAttachment("c:\\temp\\js-bak.sql"); // add attachments
 ////$mail->AddAttachment("c:/temp/11-10-00.zip");
@@ -59,8 +59,9 @@ include '../DB/ConexionDB.php';
 //
 //if($mail->Send()) {echo "Send mail successfully";}
 //else {echo "Send mail fail";} 
-//            mail( "andreyblue14@gmail.com" , "Correo" , "Holaaaaa" );
-            //include '../DB/ConexionDB.php';
+
+         
+            
             $conn = new ConexionDB($_POST['usuario_login'], $_POST['password_login']);
             if ($conn->conectarDB()) {
                 $usuario_login = $_POST['usuario_login'];

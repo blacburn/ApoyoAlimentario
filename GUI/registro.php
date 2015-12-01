@@ -39,10 +39,10 @@ include '../logica/ControlCondicion_SE.php';
         $cPersona = new ControlPersona();
         if (isset($_POST['submit'])) {
             //include '../DB/ConexionDB.php';
-            $conn = new ConexionDB("apoyo_alimentario", "apoyo_alimentario");
+            $conn = new ConexionDB("Registro", "Registro");
             if ($conn->conectarDB()) {
-                $usuario_login = "apoyo_alimentario";
-                $usuario_password = "apoyo_alimentario";
+                $usuario_login = "Registro";
+                $usuario_password = "Registro";
                 session_start();
                 $sesion = $conn->getConn();
                 $_SESSION['sesion_logueado'] = $conn->getConn();
@@ -54,12 +54,21 @@ include '../logica/ControlCondicion_SE.php';
                 $aca=$auxPersona->getTipo_persona();
                 if(!empty($aca)){
                     
-                   if(  (($auxPersona->getUsuario_persona())!= $_POST['usuario_persona']) || (($auxPersona->getCorreo_persona())!= $_POST['correo_persona']) ){
+                   if(($auxPersona->getUsuario_persona())!= $_POST['usuario_anterior']){
+                       if(  (($auxPersona->getUsuario_persona())!= $_POST['usuario_persona']) || (($auxPersona->getCorreo_persona())!= $_POST['correo_persona']) ){
                        $cPersona->actualizarPersona($_POST['documento_persona'],$_POST['usuario_persona'],$_POST['correo_persona']);
                    }
                        $cPersona->registrarPersonaxUC($auxPersona->getTipo_persona(),$_POST['usuario_persona'],$_POST['clave_persona']);
 //                       $cPersona->registrarPersona($auxPersona);  
                        echo "<script>alert('Registrado')</script>"; 
+                       
+                   } 
+                   else{
+                       
+                       echo "<script>alert('Error en el usuario de condor')</script>"; 
+                   }
+                    
+                   
                 }
                 else {
                 echo "<script>alert('Errorrrrrrr' )</script>";
@@ -100,7 +109,11 @@ include '../logica/ControlCondicion_SE.php';
                     <br><br>
                     <input type="text" name="documento_persona" class="form-control" placeholder="" />
                     <br>
-                    <label for="subject">Usuario :</label>
+                    <label for="subject">Usuario Anterior:</label>
+                    <br><br>
+                    <input type="text" name="usuario_anterior" class="form-control" placeholder="" />
+                    <br>
+                    <label for="subject">Usuario nuevo :</label>
                     <br><br>
                     <input type="text" name="usuario_persona" class="form-control" placeholder="" />
                     <br>

@@ -33,6 +33,10 @@ class ControlEstudiante{
          return $this->estudianteDAO->buscarEstudiantexDocumento($documento);
     }
     
+    public function buscarEstudiantexCodigo($codigo){
+         return $this->estudianteDAO->buscarEstudiantexCodigo($codigo);
+    }
+    
     public function banderaActivo_solicitud($estudiante){
         $estudiante->setAval_solicitud("SI");        
         $this->estudianteDAO->banderaActivo_solicitud($estudiante);

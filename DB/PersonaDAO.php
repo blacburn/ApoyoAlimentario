@@ -37,8 +37,10 @@ class PersonaDAO {
     public function buscarPersonaxDocumento($documento) {
         
         $persona = new Persona();
+        echo $documento;
         $sqltxt = "select * from s_persona where k_documento = '".$documento."'";
         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        
         oci_execute($stid);
         while(oci_fetch($stid)) {
 
@@ -69,30 +71,30 @@ class PersonaDAO {
          $sqltxt="create user ".$persona->getUsuario_persona()." identified by ".$persona->getUsuario_persona()." default tablespace apoyo_def temporary tablespace apoyo_tm quota 10M on apoyo_def";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
-          echo $sqltxt; 
+          
          $sqltxt="grant R_".$persona->getTipo_persona()." to ".$persona->getUsuario_persona()."";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
-          echo $sqltxt;
+          
          $sqltxt="grant create session, connect to ".$persona->getUsuario_persona()."";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
-          echo $sqltxt;
+          
     }
     
     public function registrarPersonaxUC($tipoPersona,$usuario,$clave) {
          $sqltxt="create user ".$usuario." identified by ".$clave." default tablespace apoyo_def temporary tablespace apoyo_tm quota 10M on apoyo_def";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
-          echo $sqltxt; 
+          
          $sqltxt="grant R_".$tipoPersona." to ".$usuario."";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
-          echo $sqltxt;
+         
          $sqltxt="grant create session, connect to ".$usuario."";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
-          echo $sqltxt;
+         
     }
     
     public function actualizarPersona($documento,$usuario,$correo) {
