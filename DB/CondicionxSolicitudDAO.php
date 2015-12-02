@@ -73,6 +73,20 @@ class CondicionxSolicitudDAO {
         
     }
     
+    public function validarCondicionxSolicitud($idsolicitud,$idcondicion){
+        
+        $sqltxt="update s_condicionsolicitud set n_validado ='SI' where k_solicitud=".$idsolicitud." and k_condicion = ".$idcondicion;
+        $stid = oci_parse($_SESSION['sesion_logueado'],$sqltxt);        
+        oci_execute($stid);
+                
+    }
     
+    public function invalidarCondicionxSolicitud($idsolicitud,$idcondicion){
+        
+        $sqltxt="update s_condicionsolicitud set n_validado ='NO' where k_solicitud=".$idsolicitud." and k_condicion = ".$idcondicion;
+        $stid = oci_parse($_SESSION['sesion_logueado'],$sqltxt);        
+        oci_execute($stid);
+                
+    }
     
 }

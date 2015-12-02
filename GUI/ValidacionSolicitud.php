@@ -114,27 +114,44 @@ and open the template in the editor.
                                         echo '<div class="containerl2">';
                                         echo '<div class="col-sm-12">';
                                         echo '<div class="container" style="width: 1075px">';
-                                        echo '<center><h3 class="form-signin-heading">' . $tipo->getNombre_tipo_condicion() . '</h3></center></div>';
+                                        echo '<table id="reporte" class="display" cellspacing="0" width="100%">';
+                                        echo '<center><h3 class="form-signin-heading">' . $tipo->getNombre_tipo_condicion() . '</h3></center>';
+                                        echo '<thead><tr><th><h3>Condicion</h3></th><th><h3>Validar</h3></th><th><h3>Invalidar</h3></th></tr></head>';
                                         $cond_sol = new CondicionxSolicitud();
                                         $condicion = new Condicion_SE();
+                                        echo '<tbody">';
                                         foreach ($cCondicion_se->verCondiciones_SE($tipo->getId_tipo_condicion()) as $condicion) {
                                             foreach ($cCondicionxSolicitud->verCondicionxSolicitudxSolicitud($solicitud) as $cond_sol) {
                                                 if ($cond_sol->getId_condicion() == $condicion->getId_condicion()) {
-                                                    echo '<div class="col-sm-6">';
-                                                    echo '<br>';
-                                                    echo '<div class="col-sm-6"><h3>' . $condicion->getNombre_condicion() . '</h3></div>';
-                                                    echo '<div class="col-sm-6"><input type="checkbox" name="seleccion[]" value="' . $condicion->getId_condicion() . '"/><h4 class="form-signin-heading">Validar</h4></div></br>';
-                                                    echo '<br><br><br><br><br><br>';
-                                                    echo '</div>';
-                                                }
+                                                    //echo '<tbody">';
+                                                    echo '<tr>';
+                                                    echo '<td><h4>' . $condicion->getNombre_condicion() . '</h4></td>';
+                                                    if($cond_sol->getValidado()=='SI'){
+                                                        //$solicitud= new Solicitud();
+                                                        if($solicitud->getVal_solicitud()=='NO'){
+                                                        echo '<td><h4>validada</h4></td><td><input type="checkbox" name="seleccion2[]" value="' . $condicion->getId_condicion() . '"/></td></tr>';
+                                                        }else{
+                                                        echo '<td><h4>validada</h4></td><td>   </td></tr>';
+                                                            
+                                                        }
+                                                        
+                                                        }else {
+                                                    echo '<td><input type="checkbox" name="seleccion[]" value="' . $condicion->getId_condicion() . '"/></td><td><h4>No validada</h4></td></tr>';//<h4 class="form-signin-heading">Validar</h4></div></br>';
+                                                    }    
+                                                    
+                                                }                                            
                                             }
                                         }                                        
-                                       echo '<div class="col-sm-12"><center>';
-                                        echo "<br> <a href ='\ApoyoAlimentario\public/".$cond_sol->getSoportes_solicitud()."' target='_blank' class='btn btn-danger'>Soporte</a></center></div>";
-
-                                        echo '</div>';
                                         echo '<hr>';
+                                        echo '</tbody></table>';   
+                                        echo '<div class="col-sm-12"><center>';
+                                        echo "<br> <a href ='\ApoyoAlimentario\public/".$cond_sol->getSoportes_solicitud()."' target='_blank' class='btn btn-danger'>Soporte</a></center></div>";
+                                        echo '<br><br><br><br><br><br>';
                                         echo '</div>';
+                                        echo '</div>';
+                                        
+                                        
+                                        
                                     }
                                     ?>
                                         <div class="col-sm-6">
@@ -146,8 +163,11 @@ and open the template in the editor.
                                     <div class="container" >
                                         <br>
                                         <div class="col-sm-12"> </div>
-                                        <div class="col-sm-12" style="padding-top: 10%"> 
-                                            <button class= "btn btn-primary btn-block" type="submit" name="submit">Confirmar</button>  
+                                        <div class="col-sm-6" style="padding-top: 10%"> 
+                                            <button class= "btn btn-primary btn-block" type="submit" name="submit">Guardar</button>  
+                                        </div>
+                                        <div class="col-sm-6" style="padding-top: 10%"> 
+                                            <a href="Solicitudes.php" class= "btn btn-primary btn-block" >Salir</a>  
                                         </div>
                                         <div class="col-sm-12" style="padding-left:10%"> </div>
                                     </div>
@@ -158,8 +178,27 @@ and open the template in the editor.
                             </form>
                             
                              <?php
+                             
                             if (isset($_POST['submit'])) {
+                                try {
+                                    //if ($_POST['seleccion'])
+                                    foreach ($_POST['seleccion'] as $sel) {
+                                    //$solicitud= new Solicitud();
+                                    $cCondicionxSolicitud->validarCondicionxSolicitud($solicitud->getId_solicitud(), $sel); 
+                                   
+                                }
+                                foreach ($_POST['seleccion2'] as $sel2) {
+                                    //$solicitud= new Solicitud();
+                                    $cCondicionxSolicitud->invalidarCondicionxSolicitud($solicitud->getId_solicitud(), $sel2); 
+                                   
+                                }
+                                echo '<script language="javascript">window.location="solicitudes.php"</script>';
+                                  //  header("Location:solicitudes.php");
+                                } catch (Exception $ex) {
+                                    
                                 echo "hola";
+                                }
+                                
                             }
                             ?>
 

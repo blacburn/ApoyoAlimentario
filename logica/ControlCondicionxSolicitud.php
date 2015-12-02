@@ -37,6 +37,18 @@ class ControlCondicionxSolicitud {
           
           return $this->condicionxsolicitudDAO->verCondicionxSolicitudxSolicitud($solicitud);
       }
+      
+    public function validarCondicionxSolicitud($idsolicitud,$idcondicion){
+        
+        $this->condicionxsolicitudDAO->validarCondicionxSolicitud($idsolicitud, $idcondicion);
+        
+    }
+    
+     public function invalidarCondicionxSolicitud($idsolicitud,$idcondicion){
+        
+        $this->condicionxsolicitudDAO->invalidarCondicionxSolicitud($idsolicitud, $idcondicion);
+        
+    }
             
 
     
