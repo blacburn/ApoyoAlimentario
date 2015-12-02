@@ -3,25 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/css/index_style.css</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlConvocatoria.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/CondicionxSolicitudDAO.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/js/jquery.js</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlPersona.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/ActividadDAO.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/ConexionDB.php</file>
-            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/sesion.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/registro.php</file>
-            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/sesionConvocatoria.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/info.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/ConvocatoriaForm.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/prueba.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/Salir.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/puente/SingletonDB.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/Solicitudes.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/css/jquery.dataTables_themeroller.css</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlEstudiante.php</file>
-            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/SolicitudForm.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/FacultadDAO.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/EstudianteDAO.php</file>
-            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/form.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/css/style.css</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/PersonaDAO.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlSolicitud.php</file>
@@ -31,7 +30,6 @@
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/SolicitudDAO.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlFacultad.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/ConvocatoriaDAO.php</file>
-            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/ActividadForm.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/ValidacionSoliitud.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/footer.php</file>
         </group>

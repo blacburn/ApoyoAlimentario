@@ -14,7 +14,6 @@ include '../logica/ControlPersona.php';
 include '../logica/ControlFacultad.php';
 include '../logica/ControlCondicionxSolicitud.php';
 include '../logica/ControlCondicion_SE.php';
-
 ?>
 <html>
     <head>
@@ -31,10 +30,39 @@ include '../logica/ControlCondicion_SE.php';
         <script src="../public/js/jquery.dataTables.js"></script> 
         <script src="../public/js/jquery.dataTables.min.js"></script> 
         <script language="javascript" type="text/javascript" >
-    $(document).ready(function() {
-    $('#reporte').DataTable();
-} );
+    
 
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#reporte tfoot th').each( function () {
+        var title = $(this).text();
+        
+        $(this).html( '<input type="text" placeholder="'+title+'" size="2"/>' );
+    } );
+ 
+    // DataTable
+    var table = $('#reporte').DataTable();
+    
+    $('#reporte tbody')
+        .on( 'mouseenter', 'td', function () {
+            var colIdx = table.cell(this).index().column;
+ 
+            $( table.cells().nodes() ).removeClass( 'highlight' );
+            $( table.column( colIdx ).nodes() ).addClass( 'highlight' );
+        } );
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
     </script>
     </head>
     <body>
@@ -64,7 +92,7 @@ include '../logica/ControlCondicion_SE.php';
                <OPTION VALUE="Periodo">Periodo</option>
                
             </SELECT>-->
-            <br><br><br>
+            
             
 <!--            <input type="text"  name="usuario_login" placeholder="filtro" autofocus class="col-sm-1"/>
             
@@ -124,8 +152,24 @@ include '../logica/ControlCondicion_SE.php';
             $cSolicitud->verSolicitudes();
             
             echo '<table id="reporte" class="display" cellspacing="0" width="100%"> '
-                 . '<thead><tr><th>'."ID SOL".'</th><th>'."CODIGO ESTUDIANTE".'</th> <th>'."NOMBRE".'</th> <th>'."APELLIDO".'</th> <th>'."FACULTAD".'</th><th>'."CARRERA".'</th><th>'."CONV".'</th><th>'."PERIODO".'</th><th>'."CUPOS".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th><th>'."VALIDAR".'</th></tr></thead>'
-                        . '<tbody>';
+                 . '<thead><tr><th>'."ID SOL".'</th><th>'."CODIGO ESTUDIANTE".'</th> <th>'."NOMBRE".'</th> <th>'."APELLIDO".'</th> <th>'."FACULTAD".'</th><th>'."CARRERA".'</th><th>'."CONV".'</th><th>'."PERIODO".'</th><th>'."CUPOS".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th><th>'."VALIDAR".'</th></tr></thead>
+                    <tfoot>
+            <tr>
+                <th>id sol</th>
+                <th>cod estudiante</th>
+                <th>nombre</th>
+                <th>apellido</th>
+                <th>facultad</th>
+                <th>carrera</th>
+                <th>convocatoria</th>
+                <th>carrera</th>
+                <th>periodo</th>
+                <th>cupos</th>
+                <th>puntaje</th>
+                <th>val solicitud</th>
+            </tr>
+        </tfoot>    
+                    <tbody>';
                         foreach($cSolicitud->verSolicitudes() as $soli){
                             
                             $i=1;

@@ -54,7 +54,7 @@ include '../logica/ControlCondicion_SE.php';
                 $aca=$auxPersona->getTipo_persona();
                 if(!empty($aca)){
                     
-                   if(($auxPersona->getUsuario_persona())!= $_POST['usuario_anterior']){
+                   if(($auxPersona->getUsuario_persona())== $_POST['usuario_anterior']){
                        if(  (($auxPersona->getUsuario_persona())!= $_POST['usuario_persona']) || (($auxPersona->getCorreo_persona())!= $_POST['correo_persona']) ){
                        $cPersona->actualizarPersona($_POST['documento_persona'],$_POST['usuario_persona'],$_POST['correo_persona']);
                    }
