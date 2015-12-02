@@ -122,8 +122,12 @@ $(document).ready(function() {
 //                echo '<br><br>';
                 TablaReporte($cSolicitud,$cEstudiante,$cConvocatoria,$cFacultad,$cPersona);
                 
-                
-                
+                $persona = new Persona();
+                $persona = $cPersona->buscarPersonaxUsuario($_SESSION['usuario_login']);
+                if($persona->getTipo_persona()=='Estudiante'){
+                    echo '<script language="javascript">window.location="menu.php"</script>';                    
+                }
+
                 
 //            }
 //            else{ 

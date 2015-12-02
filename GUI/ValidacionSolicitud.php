@@ -60,7 +60,8 @@ and open the template in the editor.
                                     $idpersona =$_GET["doc"];
                                     //$codigoestudiante=$HTTP_GET_VARS["codigo"];
                                     $persona = $cPersona->buscarPersonaxDocumento($idpersona);
-
+                                    
+                                    
                                     $cSolictud = new ControlSolicitud();
                                     //$persona_documento = $persona->getDocumento_persona();
 
@@ -117,7 +118,7 @@ and open the template in the editor.
                                         echo '<table id="reporte" class="display" cellspacing="0" width="100%">';
                                         echo '<center><h3 class="form-signin-heading">' . $tipo->getNombre_tipo_condicion() . '</h3></center>';
                                         echo '<thead><tr><th><h3>Condicion</h3></th><th><h3>Validar</h3></th><th><h3>Invalidar</h3></th></tr></head>';
-                                        $cond_sol = new CondicionxSolicitud();
+                                       // $condsoporte; //= new CondicionxSolicitud();
                                         $condicion = new Condicion_SE();
                                         echo '<tbody">';
                                         foreach ($cCondicion_se->verCondiciones_SE($tipo->getId_tipo_condicion()) as $condicion) {
@@ -125,6 +126,7 @@ and open the template in the editor.
                                                 if ($cond_sol->getId_condicion() == $condicion->getId_condicion()) {
                                                     //echo '<tbody">';
                                                     echo '<tr>';
+                                                    $condsoporte = $cond_sol->getSoportes_solicitud();
                                                     echo '<td><h4>' . $condicion->getNombre_condicion() . '</h4></td>';
                                                     if($cond_sol->getValidado()=='SI'){
                                                         //$solicitud= new Solicitud();
@@ -145,7 +147,7 @@ and open the template in the editor.
                                         echo '<hr>';
                                         echo '</tbody></table>';   
                                         echo '<div class="col-sm-12"><center>';
-                                        echo "<br> <a href ='\ApoyoAlimentario\public/".$cond_sol->getSoportes_solicitud()."' target='_blank' class='btn btn-danger'>Soporte</a></center></div>";
+                                        echo "<br> <a href ='\ApoyoAlimentario\public/".$condsoporte."' target='_blank' class='btn btn-danger'>Soporte</a></center></div>";
                                         echo '<br><br><br><br><br><br>';
                                         echo '</div>';
                                         echo '</div>';
