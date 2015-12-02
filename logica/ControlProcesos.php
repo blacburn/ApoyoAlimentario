@@ -23,19 +23,19 @@ class ControlProcesos {
         $this->procesoDAO = new ProcesosDAO();
     }
 
-    public function ejecutarAsignacionPuntaje() {
+    public function ejecutarAsignacionPuntaje($convocatoria) {
 
-        $this->procesoDAO->ejecutarAsignacionPuntaje();
+        $this->procesoDAO->ejecutarAsignacionPuntaje($convocatoria);
     }
 
-    public function ejecutarValidarSolicitudes() {
+    public function ejecutarValidarSolicitudes($convocatoria) {
 
-        $this->procesoDAO->ejecutarValidarSolicitudes();
+        $this->procesoDAO->ejecutarValidarSolicitudes($convocatoria);
     }
 
-    public function ejecutarAsignarBeneficiados() {
+    public function ejecutarAsignarBeneficiados($convocatoria,$funcionario) {
 
-        $this->procesoDAO->ejecutarAsignarBeneficiados();
+        $this->procesoDAO->ejecutarAsignarBeneficiados($convocatoria,$funcionario);
     }
 
 }
