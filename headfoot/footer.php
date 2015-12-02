@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
+    <body background="fondo.jpg">
         <?php
         // put your code here
         ?>

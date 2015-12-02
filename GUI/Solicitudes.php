@@ -179,7 +179,7 @@ $(document).ready(function() {
                             $pers=$cPersona->buscarPersonaxDocumento($estu->getDocumento_estudiante());
                            
                             
-                            echo '<tr><td>'.$soli->getId_solicitud(). ' </td> <td>'.$soli->getCodigo_estudiante().'  </td> <td>'.$pers->getNombre_persona().'  </td> <td>'.$pers->getApellido_persona().'  </td> <td>'.$facu->getNombre_facultad().' </td> <td>'.$estu->getCarrera_estudiante().' </td> <td>'.$soli->getId_convocatoria().' </td> <td>'.$conv->getPeriodo().' </td> <td>'.$conv->getCupos().' </td>  <td>'.$soli->getPuntaje().' </td> <td>'.$soli->getVal_solicitud().' </td><td><a href="destino.php'.$hola='mierda'.'">Validar</a> </td></tr>';
+                            echo '<tr><td>'.$soli->getId_solicitud(). ' </td> <td>'.$soli->getCodigo_estudiante().'  </td> <td>'.$pers->getNombre_persona().'  </td> <td>'.$pers->getApellido_persona().'  </td> <td>'.$facu->getNombre_facultad().' </td> <td>'.$estu->getCarrera_estudiante().' </td> <td>'.$soli->getId_convocatoria().' </td> <td>'.$conv->getPeriodo().' </td> <td>'.$conv->getCupos().' </td>  <td>'.$soli->getPuntaje().' </td> <td>'.$soli->getVal_solicitud().' </td><td><a href="destino.php'.$hola='hg'.'">Validar</a> </td></tr>';
                             $i+=1;
                             
                         }

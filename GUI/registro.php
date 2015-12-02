@@ -14,7 +14,7 @@ include '../logica/ControlCondicion_SE.php';
         <title>Registrarse</title>
         <link rel="stylesheet" href="../public/css/style.css" type="text/css">
     </head>
-    <body>        
+    <body background="../public/images/fondo.jpg">        
         <div id="header">
             <div>
                 <a href="index.php" id="logo"><img src="../public/images/bienestar.png" alt="logo" height="90"></a>
@@ -107,23 +107,23 @@ include '../logica/ControlCondicion_SE.php';
                     <br>
                     <label for="subject">Documento :</label>
                     <br><br>
-                    <input type="text" name="documento_persona" class="form-control" placeholder="" />
+                    <input type="text" name="documento_persona" class="form-control" placeholder="" size="30" />
                     <br>
                     <label for="subject">Usuario Anterior:</label>
                     <br><br>
-                    <input type="text" name="usuario_anterior" class="form-control" placeholder="" />
+                    <input type="text" name="usuario_anterior" class="form-control" placeholder="" size="30" />
                     <br>
                     <label for="subject">Usuario nuevo :</label>
                     <br><br>
-                    <input type="text" name="usuario_persona" class="form-control" placeholder="" />
+                    <input type="text" name="usuario_persona" class="form-control" placeholder="" size="30"/>
                     <br>
                     <label for="subject">Clave :</label>
                     <br><br>
-                    <input type="text" name="clave_persona" class="form-control" placeholder="" />
+                    <input type="text" name="clave_persona" class="form-control" placeholder="" size="30"/>
                     <br>
                     <label for="subject">Correo :</label>
                     <br><br>
-                    <input type="text" name="correo_persona" class="form-control" placeholder="" />
+                    <input type="text" name="correo_persona" class="form-control" placeholder="" size="30"/>
                     <br>
                     <div class="col-sm-6" style="padding-top: 15%"> 
                         <button class= "btn btn-primary btn-block" type="submit" name="submit">Registrarme</button>  

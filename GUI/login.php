@@ -11,7 +11,7 @@ include '../DB/ConexionDB.php';
         <title>Login Apoyo</title>
         <link rel="stylesheet" href="../public/css/style.css" type="text/css">
     </head>
-    <body>        
+    <body background="../public/images/fondo.jpg">        
         <div id="header">
             <div>
                 <a href="index.php" id="logo"><img src="../public/images/bienestar.png" alt="logo" height="90"></a>

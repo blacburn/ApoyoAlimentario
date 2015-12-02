@@ -39,13 +39,13 @@
                     </li>
 
 
-                   <!-- <li class="lib">
-                        <a href="infoUsuario.php">
+                   <li class="lib">
+                        <a href="Correo.php">
                             <div class="barra"></div>
-                            <p class="menu">Info Usuario</p>
+                            <p class="menu">Correo</p>
                         </a>
 
-                    </li>-->
+                    </li>
                     
                     <li class="lib">
                         <a href="ActividadForm.php">
