@@ -37,8 +37,8 @@ and open the template in the editor.
 
         <?php
         include 'menuLateral.php';
-        ?>
 
+        ?>
         <div class="container">
             <div class="col-sm-8">
 

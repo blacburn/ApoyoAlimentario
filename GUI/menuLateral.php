@@ -37,7 +37,13 @@
                         </a>
 
                     </li>
-
+                    
+                    <li class="lib">
+                        <a href="Procesos.php">
+                            <div class="barra"></div>
+                            <p class="menu">Procesos</p>
+                        </a>
+                    </li>
 
                    <li class="lib">
                         <a href="Correo.php">
