@@ -68,7 +68,7 @@ include '../logica/ControlBeneficiadoValidado.php';
         <?php 
         require("../GUI/PHPMailer_5.2.4/PHPMailer_5.2.4/class.phpmailer.php");
         if (isset($_POST['submit'])) {
-            
+                         echo "<script>alert('Notificaciones Enviadas' )</script>";
                          $cBeneficiadoValidado->verBeneficiadoValidado();
                          foreach($cBeneficiadoValidado->verBeneficiadoValidado() as $bene){
                               $i=1;

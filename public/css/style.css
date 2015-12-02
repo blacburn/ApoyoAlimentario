@@ -59,7 +59,7 @@ p a:hover {
 
 #signup {
     padding: 0px 25px 25px;
-    background: #1bb5ac;
+    background:  transparent;
     box-shadow: 
         0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
         0px 4px 20px rgba( 0,0,0,0.33 );
@@ -77,9 +77,8 @@ p a:hover {
 }
 
 #signup .header h3 {
-    color: #333333;
-    font-size: 24px;
-    font-weight: bold;
+    color: #0000FF;
+    font: oblique bold 30px cursive; 
     margin-bottom: 5px;
 }
 
@@ -170,7 +169,7 @@ input:-moz-placeholder {
         background: -moz-linear-gradient(
         top,
         #b9c5dd 0%,
-        #a4b0cb);
+        #0000FF);
     background: -webkit-gradient(
         linear, left top, left bottom, 
         from(#b9c5dd),
@@ -789,15 +788,50 @@ input:-moz-placeholder {
 	color:#e49e06;
 }
 /*------------------------- Footer ------------------------*/
-#footer {
-	background:url(../images/bg-footer.png) repeat-x;
-	height:130px;
+#pie {
+	font-family:Arial;
+ font-size:11px;
+ text-align: center;
+ color: #000;
+ padding: 0em 35em;
+ margin: 0em 0%;
+ position: absolute;
+ margin: auto;
+ width: 42.9%;
+ float: left;
+/* width : 100%;
+    height: 450px;*/
+    top : 601px;
+/*    margin-top: -0.75cm; 
+    margin-left: -0.53cm;
+    left: 20px;
+    bottom: 100px;
+ */
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+background: rgba(147,206,222,1);
+background: -moz-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(to bottom, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=0 );
+
 }
 #footer div {
 	margin:0 auto;
 	padding:0 10px;
 	width:940px;
 }
+
+#marcoCentrado div {
+	border-collapse:collapse;
+        border-spacing : 0;
+        margin: 0 auto;
+        padding: 0;
+        widht: 95%;
+}
+
 #footer div p {
 	color:#5bdee6;
 	display:block;
