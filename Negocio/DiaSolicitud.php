@@ -10,38 +10,32 @@
  *
  * @author ANDREY
  */
-class Dia_tiquetera {
+class DiaSolicitud {
     //put your code here
     private $id_dia;
-    private $permiso;
+    private $solicitud;
     private $nombre_dia;
-
     public function getId_dia() {
         return $this->id_dia;
     }
 
-    public function setId_dia($id_dia) {
-        $this->id_dia = $id_dia;
-        return $this;
-    }
-    
-    public function getPermiso() {
-        return $this->permiso;
+    public function getSolicitud() {
+        return $this->solicitud;
     }
 
-    public function setPermiso($permiso) {
-        $this->permiso = $permiso;
-        return $this;
-    }
-    
     public function getNombre_dia() {
         return $this->nombre_dia;
     }
 
+    public function setId_dia($id_dia) {
+        $this->id_dia = $id_dia;
+    }
+
+    public function setSolicitud($solicitud) {
+        $this->solicitud = $solicitud;
+    }
+
     public function setNombre_dia($nombre_dia) {
         $this->nombre_dia = $nombre_dia;
-        return $this;
     }
-}
-
-?>
+}    

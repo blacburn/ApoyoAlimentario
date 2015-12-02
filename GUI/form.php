@@ -10,6 +10,8 @@ include '../logica/ControlSolicitud.php';
 include '../logica/ControlConvocatoria.php';
 include '../logica/ControlEstudiante.php';
 include '../logica/ControlCondicionxSolicitud.php';
+
+include '../logica/ControlDiaSolicitud.php'
 ?>
 
 <!DOCTYPE html>
@@ -90,47 +92,7 @@ and open the template in the editor.
 
                                 </div>
                                 <hr>
-                            </div>
-
-
-
-                            <?php
-                            if (isset($_POST['submit'])) {
-                                //echo 'ALGO ESTA PASANDO???????????????????????????????????';
-                                //cho seleccion[];
-
-                                $archivo_temp = $_POST['file'];
-//                                $archivo = $_FILES["file"]['name'];
-//                                $destino = "C:/Users/ANDREY/Documents/".$archivo;
-//                                move_uploaded_file($_FILES['file']['tmp_name'], $destino);
-                              
-                               //eciho $archivo_temp;
-                              //$estudiante=new Estudiante();
-                                if($estudiante->getActivo_estudiante()=='SI'){
-                                if ($estudiante->getAval_solicitud()=='NO'){
-                                $cSolictud->CrearSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);//, $archivo_temp);
-                                $idsolicitud=$cSolictud->buscarIdSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);
-                                $cEstudiante->banderaActivo_solicitud($estudiante);
-                                foreach ($_POST['seleccion'] as $sel) {
-                                    echo $sel;
-                                    echo "--->(".$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)." )  AQUIIIIIIIIIIIIIIIIIIIIII";
-                                    echo "entroo";
-                                    //$id_condicion,$id_solicitud,$descripcion,$soportes_solicitud,$validado
-                                   $cCondicionxSolicitud->crearCondicionxSolicitud($sel, $idsolicitud, "na",$_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)-1],'NO');
-                                }
-                                }else{                                
-                                echo '<script type="text/javascript">alert("El Estudiante Ya tiene una solicitud enviada");</script>';                                    
-                                    
-                                }
-                                }
-                                else{
-                                    echo '<script type="text/javascript">alert("El Estudiante no esta activo");</script>';                                    
-                                                                       
-                                }
-                            }
-                            ?>
-
-
+                            </div>      
                             <div>
                                 <br>
 
@@ -195,6 +157,72 @@ and open the template in the editor.
                                             ?> 
                                         </select>
                                         <br>
+                                        
+                                                  
+                            <?php    
+                            //tabla de dias
+                             echo '<br><br><br><br><br><br><br><center><h2>Seleccione los dias para almorzar</h2></center>';
+                            
+                            $cDiaSolicitud=new ControlDiaSolicitud();
+                            //$dia = new DiaSolicitud();       
+                            echo '<div class="container" style="width: 1075px">';
+                            echo '<div class="col-sm-3"></div><div class="col-sm-6">';
+                            echo '<table class="table table-bordered">';
+                            echo '<thead><tr><th><center><h3>Dia</h3></center></th><th><center><h3>Seleccionar</h3></center></th></tr></head>';
+                            echo '<tbody>';
+                            foreach ($cDiaSolicitud->verDias() as $dia) {
+                                echo '<tr><td><h4>'.$dia->getNombre_dia().'</h4></td><td><center><input type="checkbox" name="seldia[]" value="' . $dia->getId_dia() . '"/></center></td></tr>';                               
+                                
+                            }
+                            echo '</tbody>';
+                            echo '</table>';
+                            echo '</div><div class="col-sm-3"></div></div>'
+                            
+                            
+                            ?> 
+                                        
+                                        
+                           <?php
+                            if (isset($_POST['submit'])) {
+                                //echo 'ALGO ESTA PASANDO???????????????????????????????????';
+                                //cho seleccion[];
+
+                                //$archivo_temp = $_POST['file'];
+//                                $archivo = $_FILES["file"]['name'];
+//                                $destino = "C:/Users/ANDREY/Documents/".$archivo;
+//                                move_uploaded_file($_FILES['file']['tmp_name'], $destino);
+                              
+                               //eciho $archivo_temp;
+                              //$estudiante=new Estudiante();
+                                if($estudiante->getActivo_estudiante()=='SI'){
+                                if ($estudiante->getAval_solicitud()=='NO'){
+                                $cSolictud->CrearSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);//, $archivo_temp);
+                                $idsolicitud=$cSolictud->buscarIdSolicitud($estudiante_codigo, $_POST['id_convocatoriasol']);
+                                $cEstudiante->banderaActivo_solicitud($estudiante);
+                                foreach ($_POST['seleccion'] as $sel) {
+                                    echo $sel;
+                                    echo "--->(".$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)." )  AQUIIIIIIIIIIIIIIIIIIIIII";
+                                    echo "entroo";
+                                    //$id_condicion,$id_solicitud,$descripcion,$soportes_solicitud,$validado
+                                   $cCondicionxSolicitud->crearCondicionxSolicitud($sel, $idsolicitud, "na",$_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)-1],'NO');
+                                }
+                                
+                                foreach ($_POST['seldia'] as $dias){
+                                    $cDiaSolicitud->asignarDiaSolicitud($dias, $idsolicitud);                                    
+                                }
+                                }else{                                
+                                echo '<script type="text/javascript">alert("El Estudiante Ya tiene una solicitud enviada");</script>';                                    
+                                    
+                                }
+                                }
+                                else{
+                                    echo '<script type="text/javascript">alert("El Estudiante no esta activo");</script>';                                    
+                                                                       
+                                }
+                            }
+                            ?>
+                                        
+                                         
 
 
 
