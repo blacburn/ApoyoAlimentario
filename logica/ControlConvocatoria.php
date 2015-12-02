@@ -39,7 +39,7 @@ class ControlConvocatoria{
     }
     
     public function verConvocatorias(){
-        $convocatoria= $this->convocatoria;
+        return $this->convocatoriaDAO->verConvocatorias();
     }
     
    

@@ -18,23 +18,23 @@ class ProcesosDAO {
         
     }
 
-    public function ejecutarAsignacionPuntaje(){  
+    public function ejecutarAsignacionPuntaje($convocatoria){  
         
-        $sqltxt="";
+        $sqltxt="execute PR_ASIGNAR_PUNTAJE(".$convocatoria.")";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
     }
     
-    public function ejecutarValidarSolicitudes(){  
+    public function ejecutarValidarSolicitudes($convocatoria){  
         
-        $sqltxt="";
+        $sqltxt="execute PR_VALIDARSOLICITUDES(".$convocatoria.")";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
     }
     
-     public function ejecutarAsignarBeneficiados(){  
+     public function ejecutarAsignarBeneficiados($convocatoria,$funcionario){  
         
-        $sqltxt="";
+        $sqltxt="execute PR_ASIGNAR_BENEFICIO(".$convocatoria.",".$funcionario.")";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
     }
