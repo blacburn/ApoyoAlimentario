@@ -42,10 +42,25 @@ $(document).ready(function() {
  
     // DataTable
     var table = $('#reporte').DataTable({
-        "language": {
-             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-        }
-    } );
+        
+    "language": {
+        "sProcessing":     "Procesando...",
+        "sLengthMenu":     "Mostrar _MENU_ registros",
+	"sZeroRecords":    "No se encontraron resultados",
+        "sSearch":         "Buscar:",
+        "sLoadingRecords": "Cargando...",
+        "sEmptyTable":     "NingÃºn dato disponible en esta tabla",
+	"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+	"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+        "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+	"oPaginate": {
+		"sFirst":    "Primero",
+		"sLast":     "Ãšltimo",
+		"sNext":     "Siguiente",
+		"sPrevious": "Anterior"
+	},
+    }
+    });
     
     $('#reporte tbody')
         .on( 'mouseenter', 'td', function () {
@@ -160,7 +175,8 @@ $(document).ready(function() {
             $cSolicitud->verSolicitudes();
             
             echo '<table id="reporte" class="display" cellspacing="0" width="100%"> '
-                 . '<tfoot>
+                 . '<thead  style="display: table-row-group"><tr><th>'."ID SOL".'</th><th>'."CODIGO ESTUDIANTE".'</th> <th>'."NOMBRE".'</th> <th>'."APELLIDO".'</th> <th>'."FACULTAD".'</th><th>'."CARRERA".'</th><th>'."CONV".'</th><th>'."PERIODO".'</th><th>'."CUPOS".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th><th>'."VALIDAR".'</th></tr></thead>
+                    <tfoot  style="display: table-header-group">
             <tr>
                 <th>id sol</th>
                 <th>cod estudiante</th>
@@ -169,14 +185,13 @@ $(document).ready(function() {
                 <th>facultad</th>
                 <th>carrera</th>
                 <th>convocatoria</th>
-                <th>carrera</th>
                 <th>periodo</th>
                 <th>cupos</th>
                 <th>puntaje</th>
+                <th>val solicitud</th>
+                <th>validar</th>
             </tr>
-        </tfoot>'
-                 . '<thead><tr><th>'."ID SOL".'</th><th>'."CODIGO ESTUDIANTE".'</th> <th>'."NOMBRE".'</th> <th>'."APELLIDO".'</th> <th>'."FACULTAD".'</th><th>'."CARRERA".'</th><th>'."CONV".'</th><th>'."PERIODO".'</th><th>'."CUPOS".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th><th>'."VALIDAR".'</th></tr></thead>
-                        
+        </tfoot>    
                     <tbody>';
                         foreach($cSolicitud->verSolicitudes() as $soli){
                             
