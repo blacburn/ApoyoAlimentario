@@ -42,7 +42,7 @@
                    <li class="lib">
                         <a href="Correo.php">
                             <div class="barra"></div>
-                            <p class="menu">Correo</p>
+                            <p class="menu">Notificar Correo</p>
                         </a>
 
                     </li>
