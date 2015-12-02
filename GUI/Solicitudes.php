@@ -41,7 +41,11 @@ $(document).ready(function() {
     } );
  
     // DataTable
-    var table = $('#reporte').DataTable();
+    var table = $('#reporte').DataTable({
+        "language": {
+             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        }
+    } );
     
     $('#reporte tbody')
         .on( 'mouseenter', 'td', function () {
@@ -156,8 +160,7 @@ $(document).ready(function() {
             $cSolicitud->verSolicitudes();
             
             echo '<table id="reporte" class="display" cellspacing="0" width="100%"> '
-                 . '<thead><tr><th>'."ID SOL".'</th><th>'."CODIGO ESTUDIANTE".'</th> <th>'."NOMBRE".'</th> <th>'."APELLIDO".'</th> <th>'."FACULTAD".'</th><th>'."CARRERA".'</th><th>'."CONV".'</th><th>'."PERIODO".'</th><th>'."CUPOS".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th><th>'."VALIDAR".'</th></tr></thead>
-                    <tfoot>
+                 . '<tfoot>
             <tr>
                 <th>id sol</th>
                 <th>cod estudiante</th>
@@ -170,9 +173,10 @@ $(document).ready(function() {
                 <th>periodo</th>
                 <th>cupos</th>
                 <th>puntaje</th>
-                <th>val solicitud</th>
             </tr>
-        </tfoot>    
+        </tfoot>'
+                 . '<thead><tr><th>'."ID SOL".'</th><th>'."CODIGO ESTUDIANTE".'</th> <th>'."NOMBRE".'</th> <th>'."APELLIDO".'</th> <th>'."FACULTAD".'</th><th>'."CARRERA".'</th><th>'."CONV".'</th><th>'."PERIODO".'</th><th>'."CUPOS".'</th><th>'."PUNTAJE".'</th><th>'."VAL SOLICITUD".'</th><th>'."VALIDAR".'</th></tr></thead>
+                        
                     <tbody>';
                         foreach($cSolicitud->verSolicitudes() as $soli){
                             
