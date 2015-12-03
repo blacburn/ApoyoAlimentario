@@ -20,22 +20,24 @@ class ProcesosDAO {
 
     public function ejecutarAsignacionPuntaje($convocatoria){  
         
-        $sqltxt="execute PR_ASIGNAR_PUNTAJE(".$convocatoria.")";
+        $sqltxt="BEGIN PK_PROCESOS.PR_ASIGNAR_PUNTAJE(".$convocatoria.");END;";
+        echo $sqltxt;
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
     }
     
     public function ejecutarValidarSolicitudes($convocatoria){  
         
-        $sqltxt="execute PR_VALIDARSOLICITUDES(".$convocatoria.")";
+        $sqltxt="BEGIN PK_PROCESOS.PR_VALIDARSOLICITUDES(".$convocatoria.");END;";
          $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
          oci_execute($stid);
     }
     
      public function ejecutarAsignarBeneficiados($convocatoria,$funcionario){  
         
-        $sqltxt="execute PR_ASIGNAR_BENEFICIO(".$convocatoria.",".$funcionario.")";
-         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+        $sqltxt="BEGIN PK_PROCESOS.PR_ASIGNAR_BENEFICIO(".$convocatoria.",'".$funcionario."');END;";
+        echo $sqltxt;
+         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);         
          oci_execute($stid);
     }
     
