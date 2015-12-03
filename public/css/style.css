@@ -16,7 +16,10 @@ body {
 	font-size:10px;
 }
 
-
+#formulario {
+    
+   background:url(../images/fondo2.jpg);
+}
 
 
 a {
@@ -224,7 +227,14 @@ input:-moz-placeholder {
 
 #form {
     padding: 0px 25px 25px;
-    background: white;
+   background: rgba(73,155,234,1);
+background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(8%, rgba(84,161,235,1)), color-stop(43%, rgba(132,186,241,1)), color-stop(72%, rgba(171,207,245,1)));
+background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
+background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
+background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
+background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#abcff5', GradientType=1 );
     box-shadow: 
         0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
         0px 4px 20px rgba( 0,0,0,0.33 );
@@ -412,10 +422,17 @@ input:-moz-placeholder {
 	width:110px;
 }
 #header div ul li.selected a {
-	background:url(../images/bg-nav-selected.png) repeat-x;
+	background: rgba(44,38,212,1);
+background: -moz-linear-gradient(top, rgba(44,38,212,1) 7%, rgba(69,81,224,1) 22%, rgba(135,197,255,1) 62%, rgba(135,197,255,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(7%, rgba(44,38,212,1)), color-stop(22%, rgba(69,81,224,1)), color-stop(62%, rgba(135,197,255,1)), color-stop(100%, rgba(135,197,255,1)));
+background: -webkit-linear-gradient(top, rgba(44,38,212,1) 7%, rgba(69,81,224,1) 22%, rgba(135,197,255,1) 62%, rgba(135,197,255,1) 100%);
+background: -o-linear-gradient(top, rgba(44,38,212,1) 7%, rgba(69,81,224,1) 22%, rgba(135,197,255,1) 62%, rgba(135,197,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(44,38,212,1) 7%, rgba(69,81,224,1) 22%, rgba(135,197,255,1) 62%, rgba(135,197,255,1) 100%);
+background: linear-gradient(to bottom, rgba(44,38,212,1) 7%, rgba(69,81,224,1) 22%, rgba(135,197,255,1) 62%, rgba(135,197,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c26d4', endColorstr='#87c5ff', GradientType=0 );
 }
 #header div ul li.selected a, #header div ul li a:hover {
-	color:#1bb5ac;
+	color:#ffffff;
 }
 /*------------------------- Body ------------------------*/
 #body {

@@ -43,6 +43,9 @@ and open the template in the editor.
             <div class="col-sm-8">
 
                 <form id="form" method = "POST" > 
+                    
+                
+               
                     <div class="col-sm-8">
 
                         <div><br><br><br>

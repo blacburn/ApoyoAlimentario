@@ -37,5 +37,11 @@ class ControlProcesos {
 
         $this->procesoDAO->ejecutarAsignarBeneficiados($convocatoria,$funcionario);
     }
+    
+      public function ejecutarlistadoBeneficiados() {
+
+        $this->procesoDAO->ejecutarListaBeneficiados();
+    }
+     
 
 }

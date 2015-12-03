@@ -39,6 +39,14 @@ class ProcesosDAO {
          oci_execute($stid);
     }
     
+     public function ejecutarListaBeneficiados(){  
+        
+        $sqltxt="BEGIN PK_PROCESOS.ESCRIBIR; END;";
+         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);
+         oci_execute($stid);
+    }
+    
+    
     
     
     

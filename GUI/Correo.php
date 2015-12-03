@@ -4,6 +4,7 @@ include '../DB/ConexionDB.php';
 include '../logica/ControlFacultad.php';
 include '../logica/ControlConvocatoria.php';
 include '../logica/ControlBeneficiadoValidado.php';
+include '../logica/ControlProcesos.php';
 ?>
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
@@ -33,6 +34,7 @@ include '../logica/ControlBeneficiadoValidado.php';
         $cBeneficiadoValidado=new ControlBeneficiadoValidado();
         $cFacultad = new ControlFacultad();
         $cConvocatoria = new ControlConvocatoria();
+        $cProcesos = new ControlProcesos();
         ?>
 
         <div class="containerl">
@@ -52,22 +54,30 @@ include '../logica/ControlBeneficiadoValidado.php';
                 <br>
                 <input type="text" name="asunto"  class="form-control" placeholder="Asunto" />
                 <br>
-                <textarea name="mensaje"  placeholder="Escriba aqui el mensaje" rows="10" cols="40"></textarea> 
+                <textarea name="mensaje"  placeholder="Escriba aqui el mensaje" rows="10" cols="47"></textarea> 
                 <!--<input type="text" name="mensaje" class="form-control" placeholder="mensaje" />-->
                 <br>
                 
 
-
+<!--                <input type="file" name="archivo" id="archivo" /><br/>-->
                 
 
                 <div class="col-sm-12" style="padding-top: 10%"> 
                     <button class= "btn btn-primary btn-block" type="submit" name="submit">Enviar</button>  
                 </div>
+                
+                <div class="col-sm-12" style="padding-top: 20%"> 
+                    <label for="subject">Generar listado de beneficiados:</label>
+                <button class= "btn btn-primary btn-block" type="submit" name="generar">Generar</button>  
+                 </div>
             </form>
+            
         </div>
         <?php 
         require("../GUI/PHPMailer_5.2.4/PHPMailer_5.2.4/class.phpmailer.php");
         if (isset($_POST['submit'])) {
+            
+                         $archivo=$_FILES["archivo"];
                          echo "<script>alert('Notificaciones Enviadas' )</script>";
                          $cBeneficiadoValidado->verBeneficiadoValidado();
                          foreach($cBeneficiadoValidado->verBeneficiadoValidado() as $bene){
@@ -89,7 +99,7 @@ $mail->Password = "apoyo20152"; // SMTP password
 $mail->AddAddress($bene->getCorreo_persona(), "".$bene->getNombre_persona().",".$bene->getApellido_persona().""); //replace myname and mypassword to yours
 $mail->AddReplyTo("apoyoalimentarioUD@gmail.com", "Apoyo Alimentario UD");
 $mail->WordWrap = 50; // set word wrap
-//$mail->AddAttachment("c:\\temp\\js-bak.sql"); // add attachments
+//$mail->AddAttachment($archivo,$archivo); // add attachments
 //$mail->AddAttachment("c:/temp/11-10-00.zip");
 
 $mail->IsHTML(true); // set email format to HTML
@@ -105,7 +115,11 @@ else {echo "Send mail fail";}
                             
                         }
             
-                      } 
+                      }
+                      
+                      if (isset($_POST['generar'])) {
+                          $cProcesos->ejecutarlistadoBeneficiados();
+                      }
         ?>
         
         
