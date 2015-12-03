@@ -40,13 +40,10 @@ and open the template in the editor.
 
         ?>
         <div class="container">
-            <div class="col-sm-8">
+            <div class="col-sm-10">
 
                 <form id="form" method = "POST" > 
-                    
-                
-               
-                    <div class="col-sm-8">
+                    <div class="col-sm-12">
 
                         <div><br><br><br>
 
@@ -251,6 +248,9 @@ and open the template in the editor.
                             </form>
                         </div>
                     </div>
+                    </div>
+             </div>
+         
                     <br><br>
 
                     <div id="footer">

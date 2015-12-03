@@ -1,4 +1,5 @@
   <div id="header" >
+      <frame>
             <div>
                 <a href="index.php" id="logo"><img src="../public/images/bienestar.png" alt="logo" height="90"></a>
                 <ul>
@@ -10,4 +11,5 @@
                     ?>
                 </ul>
             </div>
+      </frame>
         </div>
