@@ -42,6 +42,14 @@ class ProcesosDAO {
     }
     
     
+    public function ejecutarListaBeneficiados($convocatoria){  
+        
+        $sqltxt="BEGIN PK_PROCESOS.PR_LISTADO(".$convocatoria.");END;";
+        echo $sqltxt;
+         $stid = oci_parse($_SESSION['sesion_logueado'], $sqltxt);         
+         oci_execute($stid);
+    }
+    
     
     
     

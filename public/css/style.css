@@ -16,6 +16,18 @@ body {
 	font-size:10px;
 }
 
+.azul{
+    
+   background: rgba(117,189,209,1);
+background: -moz-linear-gradient(left, rgba(117,189,209,1) 0%, rgba(117,189,209,1) 8%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(117,189,209,1)), color-stop(8%, rgba(117,189,209,1)), color-stop(86%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+background: -webkit-linear-gradient(left, rgba(117,189,209,1) 0%, rgba(117,189,209,1) 8%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
+background: -o-linear-gradient(left, rgba(117,189,209,1) 0%, rgba(117,189,209,1) 8%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
+background: -ms-linear-gradient(left, rgba(117,189,209,1) 0%, rgba(117,189,209,1) 8%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
+background: linear-gradient(to right, rgba(117,189,209,1) 0%, rgba(117,189,209,1) 8%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75bdd1', endColorstr='#ffffff', GradientType=1 );
+}
+
 #formulario {
     
    background:url(../images/fondo2.jpg);
@@ -227,14 +239,7 @@ input:-moz-placeholder {
 
 #form {
     padding: 0px 25px 25px;
-   background: rgba(73,155,234,1);
-background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(8%, rgba(84,161,235,1)), color-stop(43%, rgba(132,186,241,1)), color-stop(72%, rgba(171,207,245,1)));
-background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
-background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
-background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
-background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(84,161,235,1) 8%, rgba(132,186,241,1) 43%, rgba(171,207,245,1) 72%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#abcff5', GradientType=1 );
+   background: white;
     box-shadow: 
         0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
         0px 4px 20px rgba( 0,0,0,0.33 );

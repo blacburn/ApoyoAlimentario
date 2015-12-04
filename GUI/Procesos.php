@@ -106,7 +106,7 @@ include '../logica/ControlFuncionario.php';
                  if (isset($_POST['sbeneficio'])) {
                      
                  foreach ($_POST['seleccion'] as $sel) {
-                                    echo $cFuncionario->buscarFuncionarioDocumento($persona->getDocumento_persona())->getId_funcionario();
+                                   // echo $cFuncionario->buscarFuncionarioDocumento($persona->getDocumento_persona())->getId_funcionario();
                                     //$persona = new Persona();
                                     $cProceso->ejecutarAsignarBeneficiados($sel,$cFuncionario->buscarFuncionarioDocumento($persona->getDocumento_persona())->getId_funcionario());
                                   }                              

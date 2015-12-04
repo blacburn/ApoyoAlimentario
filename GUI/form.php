@@ -40,12 +40,15 @@ and open the template in the editor.
 
         ?>
         <div class="container">
+        
+        
             <div class="col-sm-10">
+                
 
                 <form id="form" method = "POST" > 
                     <div class="col-sm-12">
 
-                        <div><br><br><br>
+                        <div class="azul"><br><br><br>
 
                             <div>
 
@@ -113,7 +116,7 @@ and open the template in the editor.
                                                 foreach ($cond->verCondiciones_SE($tipo->getId_tipo_condicion()) as $condi) {
                                                     echo '<div class="col-sm-6">';
                                                     echo '<br>';
-                                                    echo '<input type="checkbox" name="seleccion[]" value="' . $condi->getId_condicion() . '"/><h4 class="form-signin-heading">' . $condi->getNombre_condicion() . '</h4></br>';
+                                                    echo '<center><input type="checkbox" name="seleccion[]" value="' . $condi->getId_condicion() . '"/><h4 class="form-signin-heading">' . $condi->getNombre_condicion() . '</h4></center></br>';
                                                     echo '<br>';
                                                     //echo '<input type="radio" name="hogar" checked="" value="si"><label for="name">SI</label>';
                                                     //echo '<br>';
@@ -201,10 +204,12 @@ and open the template in the editor.
                                 $cEstudiante->banderaActivo_solicitud($estudiante);
                                 foreach ($_POST['seleccion'] as $sel) {
                                     echo $sel;
-                                    echo "--->(".$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)." )  AQUIIIIIIIIIIIIIIIIIIIIII";
+                                   // echo "--->(".$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)." )  AQUIIIIIIIIIIIIIIIIIIIIII";
                                     echo "entroo";
                                     //$id_condicion,$id_solicitud,$descripcion,$soportes_solicitud,$validado
                                    $cCondicionxSolicitud->crearCondicionxSolicitud($sel, $idsolicitud, "na",$_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)-1],'NO');
+                                   move_uploaded_file($_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)-1],'../ArchivosListas/'.
+                                           $_POST['file'][$cCondicionxSolicitud->verTipoCondicionxSolicitud($sel)-1]);
                                 }
                                 
                                 foreach ($_POST['seldia'] as $dias){
@@ -249,7 +254,8 @@ and open the template in the editor.
                         </div>
                     </div>
                     </div>
-             </div>
+            </div>
+             
          
                     <br><br>
 

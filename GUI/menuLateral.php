@@ -75,7 +75,13 @@
                         </a>
 
                     </li>
-                    
+                    <li class="lib">
+                        <a href="Beneficiados.php">
+                            <div class="barra"></div>
+                            <p class="menu">Beneficiados</p>
+                        </a>
+
+                    </li>
                     
                     
                     <li class="lib">

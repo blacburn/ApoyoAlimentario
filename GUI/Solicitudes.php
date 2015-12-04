@@ -208,7 +208,7 @@ $(document).ready(function() {
                                     ' </td> <td>'.$soli->getId_convocatoria().' </td> <td>'.$conv->getPeriodo().' </td> <td>'.
                                     $conv->getCupos().' </td>  <td>'.$soli->getPuntaje().' </td> <td>'.$soli->getVal_solicitud().
                                     ' </td><td><a href="ValidacionSolicitud.php?doc='.$estu->getDocumento_estudiante().'&conv='.
-                                    $soli->getId_convocatoria().'">Validar</a></td></tr>';
+                                    $soli->getId_convocatoria(). ' ">Validar</a></td></tr>';
                             $i+=1;
                             
                         }

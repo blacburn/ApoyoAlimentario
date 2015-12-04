@@ -66,9 +66,7 @@ include '../logica/ControlProcesos.php';
                     <button class= "btn btn-primary btn-block" type="submit" name="submit">Enviar</button>  
                 </div>
                 
-                <div class="col-sm-12" style="padding-top: 20%"> 
-                    <label for="subject">Generar listado de beneficiados:</label>
-                <button class= "btn btn-primary btn-block" type="submit" name="generar">Generar</button>  
+               
                  </div>
             </form>
             
@@ -117,9 +115,7 @@ else {echo "Send mail fail";}
             
                       }
                       
-                      if (isset($_POST['generar'])) {
-                          $cProcesos->ejecutarlistadoBeneficiados();
-                      }
+                      
         ?>
         
         

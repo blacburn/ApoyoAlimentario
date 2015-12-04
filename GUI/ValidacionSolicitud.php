@@ -147,7 +147,7 @@ and open the template in the editor.
                                         echo '<hr>';
                                         echo '</tbody></table>';   
                                         echo '<div class="col-sm-12"><center>';
-                                        echo "<br> <a href ='\ApoyoAlimentario\public/".$condsoporte."' target='_blank' class='btn btn-danger'>Soporte</a></center></div>";
+                                        echo "<br> <a href ='../archivoslistas/".$condsoporte."' target='_blank' class='btn btn-danger'>Soporte</a></center></div>";
                                         echo '<br><br><br><br><br><br>';
                                         echo '</div>';
                                         echo '</div>';

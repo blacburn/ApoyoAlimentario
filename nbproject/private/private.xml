@@ -19,6 +19,7 @@
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/headerlog.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/js/jquery.dataTables.js</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/SolicitudForm.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/VerListas.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/form.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/css/style.css</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/BeneficiadoValidadoDAO.php</file>
@@ -26,15 +27,19 @@
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/login.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/css/jquery.dataTables.css</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/index.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/Lista_aprobados.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/SolicitudDAO.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/public/js/dataTables.jqueryui.min.js</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/verListado.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/menuLateral.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/Beneficiados.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/DB/ProcesosDAO.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/ValidacionSoliitud.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/Correo.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/footer.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/ValidacionSolicitud.php</file>
             <file>file:/C:/xampp/htdocs/ApoyoAlimentario/logica/ControlProcesos.php</file>
+            <file>file:/C:/xampp/htdocs/ApoyoAlimentario/GUI/Procesos.php</file>
         </group>
     </open-files>
 </project-private>
